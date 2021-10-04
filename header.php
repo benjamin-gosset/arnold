@@ -18,13 +18,33 @@
     </div>
 
     <header class="header" role="banner">
-        <h1 class="logo">
-            <a href="<?php echo site_url(); ?>">
-                <svg role="img" aria-label="Benjamin Gosset - Accueil" class="normal">
-                    <use xlink:href="#logo-bg" />
-                </svg>
-            </a>
-        </h1>
+        <?php 
+            if ( is_front_page() ) { ?>
+                <h1 class="logo">
+                    <a href="<?php echo site_url(); ?>">
+                        <svg role="img" aria-label="Benjamin Gosset - Accueil" class="normal">
+                            <use xlink:href="#logo-bg" />
+                        </svg>
+                    </a>
+                </h1>
+            <?php } else { ?>
+                <a href="<?php echo site_url(); ?>">
+                    <svg role="img" aria-label="Benjamin Gosset - Accueil" class="normal">
+                        <use xlink:href="#logo-bg" />
+                    </svg>
+                </a>
+            <?php }
+        ?>
+        <nav role="navigation" aria-label="Menu principal">
+            <?php wp_nav_menu( array(
+                'menu' => 'Main menu',
+                'theme_location' => 'primary-menu'
+            ));
+            ?>
+        </nav>
+        <div class="header__cta">
+            <a href="<?php echo site_url('/devis/'); ?>">Devis gratuit</a>
+        </div>
     </header>
     
     <main role="main">
