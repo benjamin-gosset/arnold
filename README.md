@@ -1,8 +1,3 @@
-# bgo-starter
+# Arnold WordPress Theme
 
-WordPress starter theme
-
-## How to use
-- Command : `npm install`
-- Change URL in gulpfile.js
-- Command : `gulp`
+Custom WordPress theme for personal website : https://www.benjamin-gosset.fr
