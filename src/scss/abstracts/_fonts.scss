@@ -1,0 +1,20 @@
+// Font Family
+$primary-font-family: roboto, sans-serif;
+$secondary-font-family: sofia-pro, sans-serif;
+
+// Font Size
+$base-font-size: 16px;
+
+// Line Height
+$base-line-height: 1.4;
+$heading-line-height: 1.2;
+
+/** 
+ * Fontfaces
+ * When you are preloading fonts make sure that what is preloaded matches with the src defined in your 
+ * @font-face rules
+ * https://nooshu.github.io/blog/2021/01/23/the-importance-of-font-face-source-order-when-used-with-preload/
+ */
+@include declare-font-face("Roboto", "./fonts/roboto-v15-latin/roboto-v15-latin-regular");
+@include declare-font-face("Roboto", "./fonts/roboto-v15-latin/roboto-v15-latin-500", 500);
+@include declare-font-face("Roboto", "./fonts/roboto-v15-latin/roboto-v15-latin-700", bold);

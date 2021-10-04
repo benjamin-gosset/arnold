@@ -1,0 +1,8 @@
+body {
+    font-family: $primary-font-family;
+    font-size: $base-font-size;
+    line-height: $base-line-height;
+    color: $secondary-color;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}

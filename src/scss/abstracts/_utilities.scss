@@ -1,0 +1,18 @@
+// Strip units
+@function strip-units($value) {
+    @return ($value / ($value * 0 + 1));
+}
+
+// PX to EM
+@function em($pxval, $base: $base-font-size) {
+
+    @if not unitless($pxval) {
+        $pxval: strip-units($pxval);
+    }
+
+    @if not unitless($base) {
+        $base: strip-units($base);
+    }
+
+    @return ($pxval / $base) * 1em;
+}
