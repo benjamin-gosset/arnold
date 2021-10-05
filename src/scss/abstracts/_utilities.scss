@@ -4,7 +4,7 @@
 }
 
 // PX to EM
-@function em($pxval, $base: $base-font-size) {
+@function rem($pxval, $base: $base-font-size) {
 
     @if not unitless($pxval) {
         $pxval: strip-units($pxval);
@@ -14,5 +14,5 @@
         $base: strip-units($base);
     }
 
-    @return ($pxval / $base) * 1em;
+    @return ($pxval / $base) * 1rem;
 }

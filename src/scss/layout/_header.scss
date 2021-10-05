@@ -1,0 +1,18 @@
+header {
+    background-color: var(--dark-blue);
+    .container {
+        display: flex;
+        justify-content: space-between;
+    }
+    .logo {
+        svg {
+            width: 80px;
+        }
+    }
+    nav {
+        display: none;
+    }
+    .header__cta {
+        display: none;
+    }
+}

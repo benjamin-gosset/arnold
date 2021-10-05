@@ -121,7 +121,7 @@ function arnold_content_categories() {
 		'supports'              => array( 'title', 'editor', 'thumbnail' ),
 		'taxonomies'            => array( 'category' ),
 		'hierarchical'          => true,
-		'public'                => true,
+		'public'                => false,
 		'show_ui'               => true,
 		'show_in_menu'          => true,
 		'menu_position'         => 25,
@@ -141,6 +141,7 @@ function arnold_content_categories() {
 }
 add_action( 'init', 'arnold_content_categories', 0 );
 
+// Add parent category to breadcrumb
 add_filter( 'wpseo_breadcrumb_links', 'arnold_override_yoast_breadcrumb_trail' );
 function arnold_override_yoast_breadcrumb_trail( $links ) {
 	if ( is_category() ) {

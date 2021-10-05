@@ -18,32 +18,39 @@
     </div>
 
     <header class="header" role="banner">
-        <?php 
-            if ( is_front_page() ) { ?>
-                <h1 class="logo">
+        <div class="container">
+            <?php 
+                if ( is_front_page() ) { ?>
+                    <h1 class="logo">
+                        <a href="<?php echo site_url(); ?>">
+                            <svg role="img" aria-label="Benjamin Gosset - Accueil" class="normal">
+                                <use xlink:href="#logo-bg-head" />
+                            </svg>
+                        </a>
+                    </h1>
+                <?php } else { ?>
                     <a href="<?php echo site_url(); ?>">
                         <svg role="img" aria-label="Benjamin Gosset - Accueil" class="normal">
                             <use xlink:href="#logo-bg" />
                         </svg>
                     </a>
-                </h1>
-            <?php } else { ?>
-                <a href="<?php echo site_url(); ?>">
-                    <svg role="img" aria-label="Benjamin Gosset - Accueil" class="normal">
-                        <use xlink:href="#logo-bg" />
-                    </svg>
-                </a>
-            <?php }
-        ?>
-        <nav role="navigation" aria-label="Menu principal">
-            <?php wp_nav_menu( array(
-                'menu' => 'Main menu',
-                'theme_location' => 'primary-menu'
-            ));
+                <?php }
             ?>
-        </nav>
-        <div class="header__cta">
-            <a href="<?php echo site_url('/devis/'); ?>">Devis gratuit</a>
+            <button class="header__toggle hamburger" type="button" aria-expanded="false">
+                <span class="hamburger__box">
+                    <span class="hamburger__inner"></span>
+                </span>
+            </button>
+            <nav role="navigation" aria-label="Menu principal">
+                <?php wp_nav_menu( array(
+                    'menu' => 'Main menu',
+                    'theme_location' => 'primary-menu'
+                ));
+                ?>
+            </nav>
+            <div class="header__cta">
+                <a href="<?php echo site_url('/devis/'); ?>">Devis gratuit</a>
+            </div>
         </div>
     </header>
     
