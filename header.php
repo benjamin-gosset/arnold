@@ -41,16 +41,20 @@
                     <span class="hamburger__inner"></span>
                 </span>
             </button>
-            <nav role="navigation" aria-label="Menu principal">
-                <?php wp_nav_menu( array(
-                    'menu' => 'Main menu',
-                    'theme_location' => 'primary-menu'
-                ));
+            <nav role="navigation" aria-label="Menu principal" class="main-nav">
+                <?php 
+                    $arnold_walker = new Nav_Walker;
+                    wp_nav_menu( array(
+                        'menu'           => 'Main menu',
+                        'theme_location' => 'primary-menu',
+                        'container'      => '',
+                        //'walker'         => $arnold_walker
+                    ));
                 ?>
+                <div class="header__cta">
+                    <a href="<?php echo site_url('/devis/'); ?>">Devis gratuit</a>
+                </div>
             </nav>
-            <div class="header__cta">
-                <a href="<?php echo site_url('/devis/'); ?>">Devis gratuit</a>
-            </div>
         </div>
     </header>
     

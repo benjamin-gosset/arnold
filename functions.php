@@ -162,3 +162,15 @@ function arnold_override_yoast_breadcrumb_trail( $links ) {
 	}
     return $links;
 }
+
+// Main Nav Walker
+class Nav_Walker extends Walker_Nav_Menu 
+{
+	public function start_el(&$output, $item, $depth = 0, $args = null, $id = 0)
+	{
+		if ( $args->walker->has_children ) {
+			
+		}		
+	return $output;
+	}
+}

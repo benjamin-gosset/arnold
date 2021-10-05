@@ -32,3 +32,53 @@
 .hamburger__inner::after {
     bottom: -.5rem;
 }
+
+/* Main Nav */
+nav {
+    display: none;
+    ul li ul {
+        display: none;
+    }
+}
+
+.main-nav {
+    &.is-active {
+        display: block;
+        position: absolute;
+        width: 100%;
+        transform: translateY(160px);
+        background-color: var(--dark-blue);
+        left: 0;
+        right: 0;
+        ul {
+            padding: 0;
+            margin: 0;
+        }
+        li {
+            padding: 0;
+            margin: 0;
+            position: relative;
+            &.menu-item-has-children::after {
+                content : '+';
+                display: inline-block;
+                color: var(--white);
+                position: absolute;
+                right: 0;
+            }
+        }
+        a {
+            display: block;
+            color: var(--white);
+            text-decoration: none;
+            text-align: left;
+            font-weight: bold;
+            padding-left: 10px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            border-top: 1px solid #28283f;
+            &:hover {
+                background-color: #28283f;
+            }
+        }
+    }
+}
