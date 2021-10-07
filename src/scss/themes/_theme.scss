@@ -8,3 +8,14 @@
     padding-left: rem(15px);
     padding-right: rem(15px);
 }
+
+.page-title-area {
+    padding: 10rem 0;
+    text-align: center;
+    background-color: var(--dark-blue);
+    color: var(--white);
+}
+
+h1 {
+    font-size: rem(48px);
+}

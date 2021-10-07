@@ -4,18 +4,7 @@ get_header();
 
 $category = get_queried_object();
 $cat_id   = $category->term_id;
-// echo $cat_id;
-?>
 
-<h1><?php single_cat_title(''); ?></h1>
-
-<?php
-    if ( function_exists('yoast_breadcrumb') ) {
-        yoast_breadcrumb( '<p class="breadcrumbs">','</p>' );
-    }
-?>
-
-<?php
 // Display content from gut cat with the actual category
 $args = array( 
     'post_type'     => 'content_categories',

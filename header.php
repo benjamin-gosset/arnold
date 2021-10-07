@@ -59,3 +59,20 @@
     
     <main role="main">
         <a id="content" tabindex="-1"></a>
+        <section class="page-title-area">
+            <?php
+                if ( is_page() ) { ?>
+                    <h1><?php the_title(); ?></h1>
+                <?php
+                } elseif ( is_category() ) { ?>
+                    <h1><?php single_cat_title(''); ?></h1>
+                <?php
+                }
+
+                if ( function_exists('yoast_breadcrumb') ) {
+                    yoast_breadcrumb( '<p class="breadcrumbs">','</p>' );
+                }
+            ?>
+        </section>
+
+            
