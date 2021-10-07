@@ -16,8 +16,11 @@ $args = array(
 $query = new WP_Query( $args );
 
 while ( $query->have_posts() ) :
-    $query->the_post();
-    the_content();
+    $query->the_post(); ?>
+    <div class="container">
+        <?php the_content(); ?>
+    </div>
+    <?php
 endwhile;
 
 wp_reset_postdata();

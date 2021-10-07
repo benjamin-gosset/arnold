@@ -58,21 +58,30 @@
     </header>
     
     <main role="main">
-        <a id="content" tabindex="-1"></a>
-        <section class="page-title-area">
+        <a id="content" tabindex="-1"></a>      
             <?php
-                if ( is_page() ) { ?>
-                    <h1><?php the_title(); ?></h1>
-                <?php
-                } elseif ( is_category() ) { ?>
-                    <h1><?php single_cat_title(''); ?></h1>
-                <?php
-                }
+                $page_id = get_queried_object_id();
+                $featured_img_url = get_the_post_thumbnail_url( $page_id, 'full');
 
-                if ( function_exists('yoast_breadcrumb') ) {
-                    yoast_breadcrumb( '<p class="breadcrumbs">','</p>' );
-                }
+                if ( is_page() && ! is_front_page() ) { ?>
+                    <section class="page-title-area" style="background-image: url(<?php echo $featured_img_url; ?>);">
+                        <h1><span><?php the_title(); ?></span></h1>
+                        <?php
+                        if ( function_exists('yoast_breadcrumb') ) {
+                            yoast_breadcrumb( '<p class="breadcrumbs">','</p>' );
+                        } ?>
+                    </section>
+
+                <?php } elseif ( is_category() ) { ?>
+                    <section class="page-title-area" style="background-image: url(<?php echo $featured_img_url; ?>);">
+                    <h1><?php single_cat_title(''); ?></h1>
+                    <?php
+                    if ( function_exists('yoast_breadcrumb') ) {
+                        yoast_breadcrumb( '<p class="breadcrumbs">','</p>' );
+                    } ?>
+                    </section>
+                <?php }
             ?>
-        </section>
+        
 
             

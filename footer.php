@@ -5,12 +5,12 @@
         <div class="footer__about">
             <a href="<?php echo site_url(); ?>">
                 <svg role="img" aria-label="Benjamin Gosset - Accueil" class="normal">
-                    <use xlink:href="#logo-bg" />
+                    <use xlink:href="#logo-bg-head" />
                 </svg>
             </a>
         </div>
         <div class="footer__nav">
-            <p>Expertises</p>
+            <p class="footer__menu__title">Expertises</p>
             <?php wp_nav_menu( array(
                 'menu' => 'Footer menu 1',
                 'theme_location' => 'footer-menu-1'
@@ -18,7 +18,7 @@
             ?>
         </div>
         <div class="footer__links">
-            <p>Liens utiles</p>
+            <p class="footer__menu__title">Liens utiles</p>
             <?php wp_nav_menu( array(
                 'menu' => 'Footer menu 2',
                 'theme_location' => 'footer-menu-2'

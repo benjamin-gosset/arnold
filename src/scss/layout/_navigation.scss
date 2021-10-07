@@ -3,6 +3,15 @@
     background-color: transparent;
     border: 0;
     cursor: pointer;
+    margin-top: rem(15px);
+    &:hover {
+        .hamburger__inner::before {
+            transform: translateY(-2px);
+        }
+        .hamburger__inner::after {
+            transform: translateY(2px);
+        }
+    }
 }
 .hamburger__box {
     display: block;
@@ -60,11 +69,11 @@ nav {
         display: block;
         position: absolute;
         width: 100%;
-        transform: translateY(160px);
+        transform: translateY(80px);
         background-color: var(--dark-blue);
         left: 0;
         right: 0;
-        z-index: 100;
+        z-index: 150;
         ul {
             padding: 0;
             margin: 0;
