@@ -29,9 +29,9 @@
                         </a>
                     </h1>
                 <?php } else { ?>
-                    <a href="<?php echo site_url(); ?>">
+                    <a href="<?php echo site_url(); ?>" class="logo">
                         <svg role="img" aria-label="Benjamin Gosset - Accueil" class="normal">
-                            <use xlink:href="#logo-bg" />
+                            <use xlink:href="#logo-bg-head" />
                         </svg>
                     </a>
                 <?php }
@@ -43,12 +43,11 @@
             </button>
             <nav role="navigation" aria-label="Menu principal" class="main-nav">
                 <?php 
-                    $arnold_walker = new Nav_Walker;
                     wp_nav_menu( array(
                         'menu'           => 'Main menu',
                         'theme_location' => 'primary-menu',
                         'container'      => '',
-                        //'walker'         => $arnold_walker
+                        'walker'         => new Nav_Walker
                     ));
                 ?>
                 <div class="header__cta">

@@ -15,6 +15,9 @@ navButton.onclick = () => {
     navButton.setAttribute('aria-expanded', buttonAttribute);
 }
 
+const subMenuBtn = document.querySelector('.menu-item-has-children button');
+subMenuBtn.onclick = (e) => e.target.closest('.menu-item').classList.toggle('is-open');
+
 /**
  * File skip-link-focus-fix.js.
  *

@@ -11,12 +11,13 @@
 }
 .hamburger__inner {
     display: block;
+    &::before,
+    &::after {
+        content: '';
+        display: block;
+    }
 }
-.hamburger__inner::before,
-.hamburger__inner::after {
-    content: '';
-    display: block;
-}
+
 .hamburger__inner,
 .hamburger__inner::before,
 .hamburger__inner::after {
@@ -31,6 +32,19 @@
 }
 .hamburger__inner::after {
     bottom: -.5rem;
+}
+
+.hamburger[aria-expanded="true"] {
+    .hamburger__inner {
+        transform: rotate(45deg);
+        &::before {
+            opacity: 0;
+        }
+        &::after {
+            transform: rotate(-90deg);
+            bottom: 0;
+        }
+    }
 }
 
 /* Main Nav */
@@ -50,6 +64,7 @@ nav {
         background-color: var(--dark-blue);
         left: 0;
         right: 0;
+        z-index: 100;
         ul {
             padding: 0;
             margin: 0;
@@ -58,12 +73,45 @@ nav {
             padding: 0;
             margin: 0;
             position: relative;
-            &.menu-item-has-children::after {
-                content : '+';
-                display: inline-block;
-                color: var(--white);
-                position: absolute;
-                right: 0;
+            &.menu-item-has-children {
+                button {
+                    border: 0;
+                    background-color: transparent;
+                    color: var(--white);
+                    padding: 0 1rem;
+                    font-weight: bold;
+                    background-color: var(--light-dark-blue);
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    right: 0;
+                    height: 44px;
+                    border-top: 1px solid var(--light-dark-blue);
+                    border-bottom: 1px solid var(--light-dark-blue);
+                    &:hover {
+                        cursor: pointer;
+                        background-color: var(--dark-blue);
+                    }
+                    .minus {
+                        display: none;
+                    }
+                }
+            }
+            &.is-open { 
+                ul {
+                    display: block;
+                    li a {
+                        padding-left: 2rem;
+                    }
+                }
+                button {
+                    .plus {
+                        display: none;
+                    }
+                    .minus {
+                        display: block;
+                    }
+                }
             }
         }
         a {
@@ -75,9 +123,14 @@ nav {
             padding-left: 10px;
             padding-top: 10px;
             padding-bottom: 10px;
-            border-top: 1px solid #28283f;
+            border-top: 1px solid var(--light-dark-blue);
             &:hover {
-                background-color: #28283f;
+                background-color: rgba(255,255,255,0.1); 
+            }
+        }
+        .header__cta a {
+            &:hover {
+                background-color: rgba(255,255,255,0.1); 
             }
         }
     }

@@ -166,11 +166,41 @@ function arnold_override_yoast_breadcrumb_trail( $links ) {
 // Main Nav Walker
 class Nav_Walker extends Walker_Nav_Menu 
 {
-	public function start_el(&$output, $item, $depth = 0, $args = null, $id = 0)
-	{
-		if ( $args->walker->has_children ) {
-			
-		}		
-	return $output;
+	/**
+	 * Ends the element output, if needed.
+	 *
+	 * @since 3.0.0
+	 * @since 5.9.0 Renamed `$item` to `$data_object` to match parent class for PHP 8 named parameter support.
+	 *
+	 * @see Walker::end_el()
+	 *
+	 * @param string   $output      Used to append additional content (passed by reference).
+	 * @param WP_Post  $data_object Menu item data object. Not used.
+	 * @param int      $depth       Depth of page. Not Used.
+	 * @param stdClass $args        An object of wp_nav_menu() arguments.
+	 */
+	public function end_el( &$output, $data_object, $depth = 0, $args = null ) {
+		
+		$item_has_children = false;
+
+		foreach ( $data_object->classes as $item_class ) {
+			if ( $item_class == 'menu-item-has-children' ) {
+				$item_has_children = true;
+			}
+		}
+
+		if ( isset( $args->item_spacing ) && 'discard' === $args->item_spacing ) {
+			$t = '';
+			$n = '';
+		} else {
+			$t = "\t";
+			$n = "\n";
+		}
+
+		if ( $item_has_children == true ) {
+			$output .= '<button aria-label="Voir le sous-menu"><span class="plus">&plus;</span><span class="minus">&minus;</span></button>';
+		}
+
+		$output .= '</li>'.$n;
 	}
 }
