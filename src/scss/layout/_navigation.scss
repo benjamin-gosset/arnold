@@ -33,7 +33,7 @@
     position: absolute;
     width: rem(24px);
     height: rem(2px);
-    background-color: var(--white);
+    background-color: var(--dark-blue);
     border-radius: 1px;
 }
 .hamburger__inner::before {
@@ -70,7 +70,8 @@ nav {
         position: absolute;
         width: 100%;
         transform: translateY(80px);
-        background-color: var(--dark-blue);
+        // background-color: var(--dark-blue);
+        background-color: var(--white);
         left: 0;
         right: 0;
         z-index: 150;
@@ -125,7 +126,8 @@ nav {
         }
         a {
             display: block;
-            color: var(--white);
+            // color: var(--white);
+            color: var(--dark-blue);
             text-decoration: none;
             text-align: left;
             font-weight: bold;

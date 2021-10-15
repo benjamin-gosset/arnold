@@ -24,7 +24,7 @@
                     <h1 class="logo">
                         <a href="<?php echo site_url(); ?>">
                             <svg role="img" aria-label="Benjamin Gosset - Accueil" class="normal">
-                                <use xlink:href="#logo-bg-head" />
+                                <use xlink:href="#logo-bg" />
                             </svg>
                         </a>
                     </h1>

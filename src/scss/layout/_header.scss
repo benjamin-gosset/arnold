@@ -1,5 +1,18 @@
+a.skip-link {
+    display: inline-block;
+    color: #555;
+    background: var(--white);
+    padding: .5em;
+    position: absolute;
+    left: -99999rem;
+    z-index: 100;
+    &:focus {
+        left: 0;
+    }
+}
+
 header {
-    background-color: var(--dark-blue);
+    // background-color: var(--dark-blue);
     .container {
         display: flex;
         justify-content: space-between;

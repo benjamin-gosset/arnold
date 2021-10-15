@@ -15,6 +15,19 @@ body {
     }
 }
 
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4 {
+    font-family: $secondary-font-family;
+}
+
 h1 {
-    font-size: rem(48px);
+    font-size: rem(44px);
+    font-family: $heading-font;
+    letter-spacing: -1.5px;
 }
