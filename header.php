@@ -64,7 +64,7 @@
                 $featured_img_url = get_the_post_thumbnail_url( $page_id, 'full');
 
                 if ( is_page() && ! is_front_page() ) { ?>
-                    <section class="page-title-area" style="background-image: url(<?php echo $featured_img_url; ?>);">
+                    <section class="page-title-area">
                         <h1><span><?php the_title(); ?></span></h1>
                         <?php
                         if ( function_exists('yoast_breadcrumb') ) {
@@ -73,7 +73,7 @@
                     </section>
 
                 <?php } elseif ( is_category() ) { ?>
-                    <section class="page-title-area" style="background-image: url(<?php echo $featured_img_url; ?>);">
+                    <section class="page-title-area">
                     <h1><?php single_cat_title(''); ?></h1>
                     <?php
                     if ( function_exists('yoast_breadcrumb') ) {

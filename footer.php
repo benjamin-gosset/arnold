@@ -1,4 +1,4 @@
-        <a href="#top">Haut de page</a>
+        <a href="#top" class="back-top">&wedge;<span class="sr-only">Haut de page</span></a>
     </main>
     <?php wp_footer(); ?>
     <footer role="contentinfo">

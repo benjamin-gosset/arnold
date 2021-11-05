@@ -146,3 +146,14 @@ nav {
         }
     }
 }
+
+.back-top {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    background-color: var(--white);
+    padding: .4rem .8rem;
+    color: var(--dark-blue);
+    text-decoration: none;
+    font-weight: bold;
+}
