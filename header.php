@@ -60,25 +60,28 @@
     <main role="main">
         <a id="content" tabindex="-1"></a>      
             <?php
-                $page_id = get_queried_object_id();
-                $featured_img_url = get_the_post_thumbnail_url( $page_id, 'full');
-
                 if ( is_page() && ! is_front_page() ) { ?>
                     <section class="page-title-area">
-                        <h1><span><?php the_title(); ?></span></h1>
-                        <?php
-                        if ( function_exists('yoast_breadcrumb') ) {
-                            yoast_breadcrumb( '<p class="breadcrumbs">','</p>' );
-                        } ?>
+                        <div class="container">
+                            <?php
+                                if ( function_exists('yoast_breadcrumb') ) {
+                                    yoast_breadcrumb( '<p class="breadcrumbs">','</p>' );
+                                } 
+                            ?>
+                            <h1><span><?php the_title(); ?></span></h1>
+                        </div>
                     </section>
 
                 <?php } elseif ( is_category() ) { ?>
                     <section class="page-title-area">
-                    <h1><?php single_cat_title(''); ?></h1>
-                    <?php
-                    if ( function_exists('yoast_breadcrumb') ) {
-                        yoast_breadcrumb( '<p class="breadcrumbs">','</p>' );
-                    } ?>
+                        <div class="container">
+                            <?php
+                                if ( function_exists('yoast_breadcrumb') ) {
+                                    yoast_breadcrumb( '<p class="breadcrumbs">','</p>' );
+                                } 
+                            ?>
+                            <h1><?php single_cat_title(''); ?></h1>
+                        </div>
                     </section>
                 <?php }
             ?>

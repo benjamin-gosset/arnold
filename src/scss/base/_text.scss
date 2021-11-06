@@ -10,7 +10,7 @@ body {
 .breadcrumbs {
     a,
     .breadcrumb_last {
-        color: var(--white);
+        color: var(--dark-blue);
         font-size: .95rem;
     }
 }
@@ -23,6 +23,7 @@ h3,
 .h3,
 h4,
 .h4,
+.intro,
 .wpcf7 label,
 .wpcf7-submit {
     font-family: $secondary-font-family;
@@ -31,14 +32,13 @@ h4,
 /* Type scale : Augmented Fourth */
 
 h1 {
-    font-size: 2.827rem;
+    font-size: 2rem;
     font-family: $heading-font;
-    letter-spacing: -1.5px;
 }
 
 h2,
 .h2 {
-    font-size: 1.999rem;
+    font-size: rem(24px);
 }
 
 h3,
@@ -49,4 +49,10 @@ h3,
 h4,
 .h4 {
     font-size: 1rem;
+}
+
+figcaption {
+    text-align: center;
+    color: var(--light-dark-blue);
+    font-size: .95rem;
 }

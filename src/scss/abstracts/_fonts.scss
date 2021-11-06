@@ -1,7 +1,7 @@
 // Font Family
 $primary-font-family: 'Source Sans Pro Regular', sans-serif;
-$secondary-font-family: Jakarta, sans-serif;
-$heading-font: 'Jakarta xBold', sans-serif;
+$secondary-font-family: "Fira semi-bold", sans-serif;
+$heading-font: 'Fira bold', sans-serif;
 
 // Font Size
 $base-font-size: 16px;
@@ -16,8 +16,8 @@ $heading-line-height: 1.2;
  * in your @font-face rules
  * https://nooshu.github.io/blog/2021/01/23/the-importance-of-font-face-source-order-when-used-with-preload/
  */
-@include declare-font-face("Jakarta", "./../fonts/jakarta/PlusJakartaSans-Bold", bold);
-@include declare-font-face("Jakarta xBold", "./../fonts/jakarta/PlusJakartaSans-ExtraBold", 800);
+@include declare-font-face("Fira bold", "./../fonts/fira-sans/FiraSans-Bold", bold);
+@include declare-font-face("Fira semi-bold", "./../fonts/fira-sans/FiraSans-SemiBold", 600);
 @include declare-font-face("Source Sans Pro Regular", "./../fonts/source-sans-pro/SourceSansPro-Regular", 500);
 @include declare-font-face("Source Sans Pro Light", "./../fonts/source-sans-pro/SourceSansPro-Light", 300);
 @include declare-font-face("Source Sans Pro Italic", "./../fonts/source-sans-pro/SourceSansPro-Italic", italic);

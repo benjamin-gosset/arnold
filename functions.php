@@ -64,7 +64,7 @@ register_nav_menus( array(
 	'social-menu' => esc_html__( 'Main menu social icons', 'arnold' ),
 	'footer-menu-1' => esc_html__( 'Footer menu 1', 'arnold' ),
 	'footer-menu-2' => esc_html__( 'Footer menu 2', 'arnold' ),
-	'footer-bottom-menu' => esc_html__( 'Footer bottom menu', 'arnold' ),
+	'footer-menu-3' => esc_html__( 'Footer menu 3', 'arnold' ),
 	'footer-social-menu' => esc_html__( 'Footer social icons', 'arnold' ),
 ) );
 

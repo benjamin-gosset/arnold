@@ -18,29 +18,27 @@ img {
 }
 
 .page-title-area {
-    padding: 8rem 0;
-    text-align: center;
-    background-size: cover;
-    background-position: bottom center;
-    color: var(--white);
+    color: var(--dark-blue);
     position: relative;
     z-index: 10;
-    &::after {
-        content: '';
-        display: block;
-        position: absolute;
-        background-color: var(--dark-blue);
-        width: 100%;
-        top: 0;
-        bottom: 0;
+    .container {
+        padding-top: rem(44px);
     }
     h1,
     .breadcrumbs {
         position: relative;
         z-index: 100;
     }
+    .breadcrumbs {
+        margin-top: 0;
+        margin-bottom: rem(20px);
+    }
 }
 
 .main-content {
     margin-top: 2rem;
+}
+
+.intro {
+    width: 100%;
 }
