@@ -21,4 +21,28 @@ footer {
         text-decoration: none;
         line-height: 1.5;
     }
+    .footer__cols {
+        @include breakpoints(sm) {
+            display: flex;
+            flex-wrap: wrap;
+            .footer__nav {
+                align-self: center;
+            }
+        }
+        @include breakpoints(md) {
+            align-items: center;
+        }
+        > div {
+            @include breakpoints(sm) {
+                width: 48%;
+                margin-bottom: 2rem;
+            }
+            @include breakpoints(md) {
+                width: 24%;
+            }
+        }
+    }
+    .footer__bottom-bar {
+        font-size: .9rem;
+    }
 }

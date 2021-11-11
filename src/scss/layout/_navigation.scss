@@ -12,6 +12,9 @@
             transform: translateY(2px);
         }
     }
+    @include breakpoints(md, min) {
+        display: none;
+    }
 }
 .hamburger__box {
     display: block;
@@ -59,28 +62,29 @@
 /* Main Nav */
 nav {
     display: none;
+    @include breakpoints(md, min) {
+        display: block;
+    }
+    ul,
+    li {
+        margin: 0;
+        padding: 0;
+    }
     ul li ul {
         display: none;
     }
-}
-
-.main-nav {
-    &.is-active {
-        display: block;
-        position: absolute;
-        width: 100%;
-        transform: translateY(80px);
-        background-color: var(--white);
-        left: 0;
-        right: 0;
-        z-index: 150;
-        ul {
-            padding: 0;
-            margin: 0;
+    &.main-nav {
+        &.is-active {
+            display: block;
+            position: absolute;
+            width: 100%;
+            transform: translateY(80px);
+            background-color: var(--white);
+            left: 0;
+            right: 0;
+            z-index: 150;
         }
         li {
-            padding: 0;
-            margin: 0;
             position: relative;
             &.menu-item-has-children {
                 button {
@@ -104,6 +108,9 @@ nav {
                     .minus {
                         display: none;
                     }
+                    @include breakpoints(md, min) {
+                        display: none;
+                    }
                 }
             }
             &.is-open { 
@@ -125,11 +132,9 @@ nav {
         }
         a {
             display: block;
-            // color: var(--white);
             color: var(--dark-blue);
             text-decoration: none;
             text-align: left;
-            font-weight: bold;
             padding-left: 10px;
             padding-top: 10px;
             padding-bottom: 10px;
@@ -137,11 +142,37 @@ nav {
             &:hover {
                 background-color: rgba(255,255,255,0.1); 
             }
+            @include breakpoints(md, min) {
+                text-align: center;
+                border: none;
+            }
         }
         .header__cta a {
+            @include breakpoints(md, min) {
+                padding: .5rem 1rem;
+            }
             &:hover {
                 background-color: rgba(255,255,255,0.1); 
             }
+        }
+        .menu {
+            @include breakpoints(md, min) {
+                display: flex;
+                padding: 0;
+            }
+            li {
+                @include breakpoints(md, min) {
+                    list-style-type: none;
+                }
+                a {
+                    display: block;
+                    padding: .5rem 1rem;
+                }
+            }
+        }
+        @include breakpoints(md, min) {
+            display: flex;
+            align-items: center;
         }
     }
 }
