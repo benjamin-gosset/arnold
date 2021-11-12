@@ -74,6 +74,12 @@ nav {
         display: none;
     }
     &.main-nav {
+        .menu {
+            @include breakpoints(md) {
+                display: flex;
+                padding: 0;
+            }
+        }
         &.is-active {
             display: block;
             position: absolute;
@@ -86,6 +92,10 @@ nav {
         }
         li {
             position: relative;
+            @include breakpoints(md) {
+                list-style-type: none;
+                padding: 0 rem(20px);
+            }
             &.menu-item-has-children {
                 button {
                     border: 0;
@@ -112,6 +122,13 @@ nav {
                         display: none;
                     }
                 }
+                @include breakpoints(md) {
+                    display: flex;
+                    align-items: center;
+                    svg {
+                        margin-left: .5rem;
+                    }
+                }
             }
             &.is-open { 
                 ul {
@@ -129,22 +146,47 @@ nav {
                     }
                 }
             }
-        }
-        a {
-            display: block;
-            color: var(--dark-blue);
-            text-decoration: none;
-            text-align: left;
-            padding-left: 10px;
-            padding-top: 10px;
-            padding-bottom: 10px;
-            border-top: 1px solid var(--light-dark-blue);
-            &:hover {
-                background-color: rgba(255,255,255,0.1); 
+            a {
+                display: block;
+                color: var(--dark-blue);
+                text-decoration: none;
+                text-align: left;
+                position: relative;
+                padding-left: 10px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                border-top: 1px solid var(--light-dark-blue);
+                &:hover {
+                    background-color: rgba(255,255,255,0.1); 
+                }
+                &::after {
+                    width: 0;
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    height: .25rem;
+                    background-color: var(--dark-blue);
+                    transform: translateY(5px);
+                    transition: all .4s ease-in-out;
+                }
+                @include breakpoints(md) {
+                    text-align: center;
+                    border-top: none;
+                    display: inline-block;
+                    padding: 0;
+                }
             }
-            @include breakpoints(md) {
-                text-align: center;
-                border: none;
+            &.current-menu-parent a::after {
+                content: "";
+                display: block;
+                position: absolute;
+                width: 100%;
+                height: .25rem;
+                background-color: var(--dark-blue);
+                transform: translateY(5px);
+            }
+            &:hover a::after{
+                width: 100%;
             }
         }
         .header__cta {
@@ -152,34 +194,28 @@ nav {
                 margin-left: auto;
             }
             a {
+                background-color: var(--dark-blue);
+                color: var(--white);
+                text-decoration: none;
+                padding: .5rem 1rem;
+                display: inline-block;
+                border-top-left-radius: rem(8px);
+                border-bottom-right-radius: rem(8px);
+                border-bottom-left-radius: rem(8px);
                 @include breakpoints(md) {
                     padding: .5rem 1rem;
                 }
                 &:hover {
-                    background-color: rgba(255,255,255,0.1); 
-                }
-            }
-        }
-        .menu {
-            @include breakpoints(md) {
-                display: flex;
-                padding: 0;
-            }
-            li {
-                @include breakpoints(md) {
-                    list-style-type: none;
-                }
-                a {
-                    display: block;
-                    padding: .5rem 1rem;
+                    background-color: rgba(0,0,0,1); 
                 }
             }
         }
         @include breakpoints(md) {
             display: flex;
             align-items: center;
-            width: 74%;
+            width: 76%;
             justify-content: space-around;
+            margin-left: auto;
         }
     }
 }

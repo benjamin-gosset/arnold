@@ -12,6 +12,10 @@ a.skip-link {
 }
 
 header {
+    @include breakpoints(md) {
+        padding: .8rem 0;
+        margin-top: 4rem;
+    }
     .container {
         display: flex;
         justify-content: space-between;
@@ -19,9 +23,17 @@ header {
     .logo {
         margin: .67rem 0;
         height: 60px;
+        @include breakpoints(md) {
+            position: absolute;
+            top: rem(48px);
+        }
         svg {
             width: 60px;
             height: 60px;
+            @include breakpoints(md) {
+                width: 80px;
+                height: 80px;
+            }
         }
     }
 }

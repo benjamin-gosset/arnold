@@ -31,7 +31,7 @@
                 <?php } else { ?>
                     <a href="<?php echo site_url(); ?>" class="logo">
                         <svg role="img" aria-label="Benjamin Gosset - Accueil" class="normal">
-                            <use xlink:href="#logo-bg-head" />
+                            <use xlink:href="#logo-bg" />
                         </svg>
                     </a>
                 <?php }

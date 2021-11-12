@@ -205,6 +205,9 @@ class Nav_Walker extends Walker_Nav_Menu
 
 		if ( $item_has_children == true ) {
 			$output .= '<button aria-label="Voir le sous-menu"><span class="plus">&plus;</span><span class="minus">&minus;</span></button>';
+			$output .= '<svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M0.989502 1.70193L6.99991 7.71234L13.0103 1.70193L11.5961 0.28772L6.99991 4.88391L2.40372 0.28772L0.989502 1.70193Z" fill="#2E3A59"/>
+			</svg>';
 		}
 
 		$output .= '</li>'.$n;
