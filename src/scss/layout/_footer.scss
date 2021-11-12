@@ -3,6 +3,9 @@ footer {
     color: var(--white);
     text-align: center;
     padding: 2rem 0;
+    @include breakpoints(md) {
+        text-align: left;
+    }
     ul,
     li {
         margin: 0;
@@ -16,21 +19,29 @@ footer {
         font-weight: bold;
         text-transform: uppercase;
     }
+    p {
+        @include breakpoints(md) {
+            font-size: 1rem;
+        }
+    }
     a {
         color: #6c757d;
         text-decoration: none;
         line-height: 1.5;
+        @include breakpoints(md) {
+            font-size: 1rem;
+        }
     }
     .footer__cols {
         @include breakpoints(sm) {
             display: flex;
             flex-wrap: wrap;
             .footer__nav {
-                align-self: center;
+                align-self: flex-start;
             }
         }
         @include breakpoints(md) {
-            align-items: center;
+            align-items: flex-start;
         }
         > div {
             @include breakpoints(sm) {
@@ -39,10 +50,31 @@ footer {
             }
             @include breakpoints(md) {
                 width: 24%;
+                a {
+                    line-height: 2;
+                }
+            }
+        }
+    }
+    .footer__about {
+        svg {
+            @include breakpoints(md) {
+                width: 90px;
+                height: 100px;
+                display: none;
+            }
+        }
+        p.h2 {
+            @include breakpoints(md) {
+                margin-top: rem(14px);
             }
         }
     }
     .footer__bottom-bar {
         font-size: .9rem;
+        text-align: center;
+        @include breakpoints(md) {
+            font-size: 1rem;
+        }
     }
 }

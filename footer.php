@@ -2,7 +2,7 @@
     </main>
     <?php wp_footer(); ?>
     <footer role="contentinfo">
-        <div class="footer__cols">
+        <div class="footer__cols container">
             <div class="footer__about">
                 <a href="<?php echo site_url(); ?>">
                     <svg role="img" aria-label="Benjamin Gosset - Accueil" class="normal">

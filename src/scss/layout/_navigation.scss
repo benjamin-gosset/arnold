@@ -12,7 +12,7 @@
             transform: translateY(2px);
         }
     }
-    @include breakpoints(md, min) {
+    @include breakpoints(md) {
         display: none;
     }
 }
@@ -62,7 +62,7 @@
 /* Main Nav */
 nav {
     display: none;
-    @include breakpoints(md, min) {
+    @include breakpoints(md) {
         display: block;
     }
     ul,
@@ -108,7 +108,7 @@ nav {
                     .minus {
                         display: none;
                     }
-                    @include breakpoints(md, min) {
+                    @include breakpoints(md) {
                         display: none;
                     }
                 }
@@ -142,26 +142,31 @@ nav {
             &:hover {
                 background-color: rgba(255,255,255,0.1); 
             }
-            @include breakpoints(md, min) {
+            @include breakpoints(md) {
                 text-align: center;
                 border: none;
             }
         }
-        .header__cta a {
-            @include breakpoints(md, min) {
-                padding: .5rem 1rem;
+        .header__cta {
+            @include breakpoints(md) {
+                margin-left: auto;
             }
-            &:hover {
-                background-color: rgba(255,255,255,0.1); 
+            a {
+                @include breakpoints(md) {
+                    padding: .5rem 1rem;
+                }
+                &:hover {
+                    background-color: rgba(255,255,255,0.1); 
+                }
             }
         }
         .menu {
-            @include breakpoints(md, min) {
+            @include breakpoints(md) {
                 display: flex;
                 padding: 0;
             }
             li {
-                @include breakpoints(md, min) {
+                @include breakpoints(md) {
                     list-style-type: none;
                 }
                 a {
@@ -170,9 +175,11 @@ nav {
                 }
             }
         }
-        @include breakpoints(md, min) {
+        @include breakpoints(md) {
             display: flex;
             align-items: center;
+            width: 74%;
+            justify-content: space-around;
         }
     }
 }
