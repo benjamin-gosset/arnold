@@ -123,10 +123,19 @@ nav {
                     }
                 }
                 @include breakpoints(md) {
-                    display: flex;
-                    align-items: center;
                     svg {
                         margin-left: .5rem;
+                    }
+                }
+                &:hover ul {
+                    @include breakpoints(md) {
+                        display: block;
+                        position: absolute;
+                        margin-top: 1rem;
+                        white-space: nowrap;
+                    }
+                    li {
+                        padding: 0;
                     }
                 }
             }
@@ -158,6 +167,7 @@ nav {
                 border-top: 1px solid var(--light-dark-blue);
                 &:hover {
                     background-color: rgba(255,255,255,0.1); 
+                    color: var(--yellow);
                 }
                 &::after {
                     width: 0;
@@ -165,7 +175,7 @@ nav {
                     display: block;
                     position: absolute;
                     height: .25rem;
-                    background-color: var(--dark-blue);
+                    background-color: var(--yellow);
                     transform: translateY(5px);
                     transition: all .4s ease-in-out;
                 }
@@ -176,25 +186,31 @@ nav {
                     padding: 0;
                 }
             }
-            &.current-menu-parent a::after {
-                content: "";
-                display: block;
-                position: absolute;
-                width: 100%;
-                height: .25rem;
-                background-color: var(--dark-blue);
-                transform: translateY(5px);
+            &.current-menu-parent a {
+                color: var(--yellow);
+                &::after {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    width: 100%;
+                    height: .25rem;
+                    background-color: var(--yellow);
+                    transform: translateY(5px);
+                }
             }
             &:hover a::after{
                 width: 100%;
             }
+        }
+        > li {
+            color: red;
         }
         .header__cta {
             @include breakpoints(md) {
                 margin-left: auto;
             }
             a {
-                background-color: var(--dark-blue);
+                background-color: var(--yellow);
                 color: var(--white);
                 text-decoration: none;
                 padding: .5rem 1rem;
