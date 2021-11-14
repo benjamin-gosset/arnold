@@ -26,11 +26,30 @@ endwhile;
 wp_reset_postdata();
 
 if ( is_category() ) {
-    $params = array('parent' => get_queried_object_id() );
+    $cat_id = get_queried_object_id();
+    $params = array( 
+        'parent' =>  $cat_id, 
+        'title_li' => '',
+        'style' => ''
+    );
     if ( count( get_categories( $params ) ) ) {
-        echo '<ul>';
+        echo '<div class="container sub-cat">';
         wp_list_categories( $params );
-        echo '</ul>';
+        echo '</div>';
+    } else {
+        $child = get_category( $cat_id );
+        $parent = $child->parent;
+        $parent_data = get_category( $parent );
+        $parent_id = $parent_data->term_id;
+        $siblings_params = array( 
+            'parent' => $parent_id,
+            'exclude' => array( $cat_id ),
+            'title_li' => '',
+            'style' => ''
+        );
+        echo '<div class="container siblings-cat">';
+        wp_list_categories( $siblings_params );
+        echo '</div>';
     }
 }
 
