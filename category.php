@@ -26,6 +26,7 @@ endwhile;
 wp_reset_postdata();
 
 if ( is_category() ) {
+    echo '<div class="container cat-links"><h2>Découvrez d\'autres thématiques sur le sujet</h2>';
     $cat_id = get_queried_object_id();
     $params = array( 
         'parent' =>  $cat_id, 
@@ -33,7 +34,7 @@ if ( is_category() ) {
         'style' => ''
     );
     if ( count( get_categories( $params ) ) ) {
-        echo '<div class="container sub-cat">';
+        echo '<div class="sub-cat">';
         wp_list_categories( $params );
         echo '</div>';
     } else {
@@ -47,10 +48,11 @@ if ( is_category() ) {
             'title_li' => '',
             'style' => ''
         );
-        echo '<div class="container siblings-cat">';
+        echo '<div class="siblings-cat">';
         wp_list_categories( $siblings_params );
         echo '</div>';
     }
+    echo '</div>';
 }
 
 get_footer();

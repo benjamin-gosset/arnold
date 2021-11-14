@@ -45,3 +45,20 @@ img {
 .intro {
     width: 100%;
 }
+
+/* Sub and siblings categories */
+.sub-cat,
+.siblings-cat {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0 4rem;
+    a {
+        display: block;
+        flex: 0 0 22%;
+        text-align: center;
+        padding: 5rem 2rem;
+        margin-right: 1rem;
+        background-color: grey;
+    }
+}
+

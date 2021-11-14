@@ -131,11 +131,24 @@ nav {
                     @include breakpoints(md) {
                         display: block;
                         position: absolute;
-                        margin-top: 1rem;
                         white-space: nowrap;
+                        background-color: var(--white);
+                        transform: translateX(-1.5rem);
                     }
                     li {
                         padding: 0;
+                        @include breakpoints(md) {
+                            padding: 0 1.5rem;
+                            &:first-child {
+                                padding-top: 1.5rem;
+                            }
+                            &:last-child {
+                                padding-bottom: 1.5rem;
+                            }
+                            a {
+                                padding: rem(10px) 0;
+                            }
+                        }
                     }
                 }
             }
