@@ -7,11 +7,26 @@ img {
     height: auto;
 }
 
+body::before {
+    content: '';
+    display: block;
+    width: 70vw;
+    height: 100vh;
+    background-color: #e6e6e6;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
 .container {
     width: 100%;
     margin: auto;
     padding-left: rem(15px);
     padding-right: rem(15px);
+    @include breakpoints(md) {
+        max-width: 90%;
+    }
     @include breakpoints(lg) {
         max-width: 1200px;
     }
@@ -44,6 +59,9 @@ img {
 
 .intro {
     width: 100%;
+    @include breakpoints(md) {
+        width: 90%;
+    }
 }
 
 /* Sub and siblings categories */

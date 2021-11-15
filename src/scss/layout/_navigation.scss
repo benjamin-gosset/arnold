@@ -133,7 +133,9 @@ nav {
                         position: absolute;
                         white-space: nowrap;
                         background-color: var(--white);
-                        transform: translateX(-1.5rem);
+                        transform: translateY(-1px);
+                        z-index: 100;
+                        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
                     }
                     li {
                         padding: 0;
@@ -189,8 +191,9 @@ nav {
                     position: absolute;
                     height: .25rem;
                     background-color: var(--yellow);
-                    transform: translateY(5px);
+                    transform: translateY(3px);
                     transition: all .4s ease-in-out;
+                    z-index: 500;
                 }
                 @include breakpoints(md) {
                     text-align: center;
@@ -199,8 +202,9 @@ nav {
                     padding: 0;
                 }
             }
-            &.current-menu-parent a {
+            &.current-menu-parent > a {
                 color: var(--yellow);
+                padding-bottom: 6px;
                 &::after {
                     content: "";
                     display: block;
@@ -211,8 +215,11 @@ nav {
                     transform: translateY(5px);
                 }
             }
-            &:hover a::after{
+            &:hover > a::after {
                 width: 100%;
+            }
+            &.current-menu-item > a {
+                color: var(--yellow);
             }
         }
         > li {
