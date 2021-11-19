@@ -58,15 +58,30 @@ footer {
     }
     .footer__about {
         svg {
-            @include breakpoints(md) {
-                width: 90px;
-                height: 100px;
-                display: none;
+            &.logo {
+                @include breakpoints(md) {
+                    display: none;
+                }
             }
         }
         p.h2 {
             @include breakpoints(md) {
                 margin-top: rem(14px);
+            }
+        }
+        .social-links {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1rem;
+            width: 60%;
+            a {
+                display: block;
+                width: rem(24px);
+                height: rem(24px);
+                svg {
+                    width: 100%;
+                    height: 100%;
+                }
             }
         }
     }

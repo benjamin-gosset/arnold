@@ -19,14 +19,18 @@ const subMenuBtn = document.querySelector('.menu-item-has-children button');
 subMenuBtn.onclick = (e) => e.target.closest('.menu-item').classList.toggle('is-open');
 
 // Swiper JS
-const swiper = new Swiper('.swiper', {
-    direction: 'horizontal',
-    loop: true,
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-    }
-});
+const slider = document.querySelector('.swiper');
+console.log( slider );
+if ( typeof( slider ) != 'undefined' && slider != null ) {
+    const swiper = new Swiper('.swiper', {
+        direction: 'horizontal',
+        loop: true,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        }
+    });
+}
 
 /**
  * File skip-link-focus-fix.js.

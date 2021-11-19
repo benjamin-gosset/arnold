@@ -133,7 +133,7 @@ nav {
                         position: absolute;
                         white-space: nowrap;
                         background-color: var(--white);
-                        transform: translateY(-1px);
+                        transform: translateY(3px);
                         z-index: 100;
                         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
                     }
@@ -152,6 +152,9 @@ nav {
                             }
                         }
                     }
+                }
+                &.current-menu-item svg {
+                    transform: rotate(180deg);
                 }
             }
             &.is-open { 

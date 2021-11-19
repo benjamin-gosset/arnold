@@ -7,7 +7,7 @@ img {
     height: auto;
 }
 
-body::before {
+/*body::before {
     content: '';
     display: block;
     width: 70vw;
@@ -17,7 +17,7 @@ body::before {
     top: 0;
     left: 0;
     z-index: -1;
-}
+}*/
 
 .container {
     width: 100%;
@@ -28,7 +28,7 @@ body::before {
         max-width: 90%;
     }
     @include breakpoints(lg) {
-        max-width: 1200px;
+        max-width: 1180px;
     }
 }
 

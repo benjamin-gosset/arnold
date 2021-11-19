@@ -5,13 +5,35 @@
         <div class="footer__cols container">
             <div class="footer__about">
                 <a href="<?php echo site_url(); ?>">
-                    <svg role="img" aria-label="Benjamin Gosset - Accueil" class="normal">
+                    <svg role="img" aria-label="Benjamin Gosset - Accueil" class="normal logo">
                         <use xlink:href="#logo-bg-head" />
                     </svg>
                 </a>
                 <p class="h2">Benjamin Gosset</p>
                 <p>Développeur WordPress <br>freelance situé à Caen</p>
                 <a href="mailto:contact@benjamin-gosset.fr">contact@benjamin-gosset.fr</a>
+                <div class="social-links">
+                    <a href="https://twitter.com">
+                        <svg role="img" aria-label="Benjamin Gosset - Accueil">
+                            <use xlink:href="#twitter" />
+                        </svg>
+                    </a>
+                    <a href="https://linkedin.com">
+                        <svg role="img" aria-label="Benjamin Gosset - Accueil">
+                            <use xlink:href="#linkedin-icon" />
+                        </svg>
+                    </a>
+                    <a href="https://wordpress.org">
+                        <svg role="img" aria-label="Benjamin Gosset - Accueil">
+                            <use xlink:href="#wordpress-icon" />
+                        </svg>
+                    </a>
+                    <a href="https://github.com">
+                        <svg role="img" aria-label="Benjamin Gosset - Accueil">
+                            <use xlink:href="#github-icon" />
+                        </svg>
+                    </a>
+                </div>
             </div>
             <div class="footer__nav">
                 <p class="footer__menu__title">Expertises</p>
