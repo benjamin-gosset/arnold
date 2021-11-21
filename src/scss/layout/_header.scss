@@ -21,12 +21,7 @@ header {
         justify-content: space-between;
     }
     .logo {
-        margin: .67rem 0;
-        height: 60px;
-        @include breakpoints(md) {
-            position: absolute;
-            top: rem(48px);
-        }
+        height: 80px;
         svg {
             width: 60px;
             height: 60px;

@@ -20,7 +20,6 @@ subMenuBtn.onclick = (e) => e.target.closest('.menu-item').classList.toggle('is-
 
 // Swiper JS
 const slider = document.querySelector('.swiper');
-console.log( slider );
 if ( typeof( slider ) != 'undefined' && slider != null ) {
     const swiper = new Swiper('.swiper', {
         direction: 'horizontal',

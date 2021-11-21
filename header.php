@@ -50,10 +50,10 @@
                         'walker'         => new Nav_Walker
                     ));
                 ?>
-                <div class="header__cta">
-                    <a href="<?php echo site_url('/devis/'); ?>">Devis gratuit</a>
-                </div>
             </nav>
+            <div class="header__cta">
+                <a href="<?php echo site_url('/devis/'); ?>">Devis gratuit</a>
+            </div>
         </div>
     </header>
     

@@ -228,33 +228,33 @@ nav {
         > li {
             color: red;
         }
-        .header__cta {
-            @include breakpoints(md) {
-                margin-left: auto;
-            }
-            a {
-                background-color: var(--yellow);
-                color: var(--white);
-                text-decoration: none;
-                padding: .5rem 1rem;
-                display: inline-block;
-                border-top-left-radius: rem(8px);
-                border-bottom-right-radius: rem(8px);
-                border-bottom-left-radius: rem(8px);
-                @include breakpoints(md) {
-                    padding: .5rem 1rem;
-                }
-                &:hover {
-                    background-color: rgba(0,0,0,1); 
-                }
-            }
-        }
         @include breakpoints(md) {
             display: flex;
             align-items: center;
-            width: 76%;
             justify-content: space-around;
-            margin-left: auto;
+        }
+    }
+}
+
+.header__cta {
+    @include breakpoints(md) {
+        display: flex;
+        align-items: center;
+    }
+    a {
+        background-color: var(--yellow);
+        color: var(--white);
+        text-decoration: none;
+        padding: .5rem 1rem;
+        display: inline-block;
+        border-top-left-radius: rem(8px);
+        border-bottom-right-radius: rem(8px);
+        border-bottom-left-radius: rem(8px);
+        @include breakpoints(md) {
+            padding: .5rem 1rem;
+        }
+        &:hover {
+            background-color: rgba(0,0,0,1); 
         }
     }
 }
