@@ -7,6 +7,10 @@ img {
     height: auto;
 }
 
+.center {
+    text-align: center;
+}
+
 /*body::before {
     content: '';
     display: block;
@@ -57,6 +61,19 @@ img {
     margin-top: 2rem;
 }
 
+h2 {
+    &:not(:first-of-type) {
+        @include breakpoints(md) {
+            margin-top: 10rem;
+        }
+    }
+    &:first-of-type {
+        @include breakpoints(md) {
+            margin-top: 5rem;;
+        }
+    }
+}
+
 .intro {
     width: 100%;
     @include breakpoints(md) {
@@ -64,19 +81,41 @@ img {
     }
 }
 
+.sub-intro {
+    width: 70%;
+}
+
+/* Services blocks */
+.wp-block-media-text {
+    margin: 10rem 0;
+    h2 {
+        margin-top: rem(32px);
+        margin-bottom: rem(32px);
+    }
+}
+
+
 /* Sub and siblings categories */
-.sub-cat,
-.siblings-cat {
-    display: flex;
-    justify-content: center;
-    margin: 2rem 0 4rem;
-    a {
-        display: block;
-        flex: 0 0 22%;
-        text-align: center;
-        padding: 5rem 2rem;
-        margin-right: 1rem;
-        background-color: grey;
+.cat-links {
+    text-align: center;
+    margin: 10rem auto;
+    .sub-cat,
+    .siblings-cat {
+        display: flex;
+        justify-content: center;
+        margin: 4rem 0;
+        a {
+            display: block;
+            text-align: center;
+            padding: 5rem 2rem;
+            margin-right: 1rem;
+            background-color: grey;
+            font-family: $secondary-font-family;
+            color: var(--white);
+            text-decoration: none;
+            width: 100%;
+            max-width: 300px;
+        }
     }
 }
 

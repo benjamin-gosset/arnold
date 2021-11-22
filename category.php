@@ -26,7 +26,6 @@ endwhile;
 wp_reset_postdata();
 
 if ( is_category() ) {
-    echo '<div class="container cat-links"><h2>Découvrez d\'autres thématiques sur le sujet</h2>';
     $cat_id = get_queried_object_id();
     $params = array( 
         'parent' =>  $cat_id, 
@@ -34,6 +33,9 @@ if ( is_category() ) {
         'style' => ''
     );
     if ( count( get_categories( $params ) ) ) {
+        $cat = get_the_category(); 
+        $cat_name = $cat[0]->cat_name;
+        echo '<div class="container cat-links"><h3>Découvrez d\'autres thématiques sur le sujet "' . $cat_name . '"</h3>';
         echo '<div class="sub-cat">';
         wp_list_categories( $params );
         echo '</div>';
@@ -41,6 +43,7 @@ if ( is_category() ) {
         $child = get_category( $cat_id );
         $parent = $child->parent;
         $parent_data = get_category( $parent );
+        $parent_name = $parent_data->cat_name;
         $parent_id = $parent_data->term_id;
         $siblings_params = array( 
             'parent' => $parent_id,
@@ -48,6 +51,7 @@ if ( is_category() ) {
             'title_li' => '',
             'style' => ''
         );
+        echo '<div class="container cat-links"><h3>Découvrez d\'autres thématiques sur le sujet "' . $parent_name . '"</h3>';
         echo '<div class="siblings-cat">';
         wp_list_categories( $siblings_params );
         echo '</div>';

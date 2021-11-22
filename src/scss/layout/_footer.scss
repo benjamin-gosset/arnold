@@ -42,6 +42,7 @@ footer {
         }
         @include breakpoints(md) {
             align-items: flex-start;
+            justify-content: space-between;
         }
         > div {
             @include breakpoints(sm) {
@@ -49,7 +50,7 @@ footer {
                 margin-bottom: 2rem;
             }
             @include breakpoints(md) {
-                width: 24%;
+                width: 30%;
                 a {
                     line-height: 2;
                 }

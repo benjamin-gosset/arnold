@@ -40,17 +40,29 @@ h1 {
 
 h2,
 .h2 {
+    font-family: $heading-font;
     font-size: rem(24px);
+    @include breakpoints(md) {
+        font-size: rem(40px);
+    }
 }
 
 h3,
 .h3 {
+    font-family: $heading-font;
     font-size: 1.414rem;
+    @include breakpoints(md) {
+        font-size: rem(32px);
+    }
 }
 
 h4,
 .h4 {
+    font-family: $heading-font;
     font-size: 1rem;
+    @include breakpoints(md) {
+        font-size: 1.5rem;
+    }
 }
 
 .intro {
@@ -64,4 +76,8 @@ figcaption {
     text-align: center;
     color: var(--light-dark-blue);
     font-size: .95rem;
+}
+
+.cat-links a {
+    font-size: rem(20px);
 }

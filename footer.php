@@ -9,7 +9,7 @@
                         <use xlink:href="#logo-bg-head" />
                     </svg>
                 </a>
-                <p class="h2">Benjamin Gosset</p>
+                <p class="h4">Benjamin Gosset</p>
                 <p>Développeur WordPress <br>freelance situé à Caen</p>
                 <a href="mailto:contact@benjamin-gosset.fr">contact@benjamin-gosset.fr</a>
                 <div class="social-links">
@@ -48,14 +48,6 @@
                 <?php wp_nav_menu( array(
                     'menu' => 'Footer menu 2',
                     'theme_location' => 'footer-menu-2'
-                ));
-                ?>
-            </div>
-            <div class="footer__social">
-                <p class="footer__menu__title">Ailleurs sur le web</p>
-                <?php wp_nav_menu( array(
-                    'menu' => 'Footer menu 3',
-                    'theme_location' => 'footer-menu-3'
                 ));
                 ?>
             </div>
