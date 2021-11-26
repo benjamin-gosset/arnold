@@ -34,11 +34,16 @@ if ( is_category() ) {
     );
     if ( count( get_categories( $params ) ) ) {
         $cat = get_the_category(); 
-        $cat_name = $cat[0]->cat_name;
-        echo '<div class="container cat-links"><h3>Découvrez d\'autres thématiques sur le sujet "' . $cat_name . '"</h3>';
-        echo '<div class="sub-cat">';
-        wp_list_categories( $params );
-        echo '</div>';
+        $cat_name = $cat[0]->cat_name; ?>
+        <div class="cat-links">
+            <div class="container">
+                <h3>Découvrez d'autres thématiques sur le sujet "<?php echo $cat_name; ?>"</h3>
+            </div>
+            <div class="sub-cat">
+                <?php wp_list_categories( $params ); ?>
+            </div>
+        </div>
+    <?php    
     } else {
         $child = get_category( $cat_id );
         $parent = $child->parent;
@@ -49,14 +54,22 @@ if ( is_category() ) {
             'parent' => $parent_id,
             'exclude' => array( $cat_id ),
             'title_li' => '',
-            'style' => ''
-        );
-        echo '<div class="container cat-links"><h3>Découvrez d\'autres thématiques sur le sujet "' . $parent_name . '"</h3>';
-        echo '<div class="siblings-cat">';
-        wp_list_categories( $siblings_params );
-        echo '</div>';
+            'style' => '',
+            'separator' => '',
+            'walker' => new Walker_Reformated_Category()
+        ); ?>
+        <div class="cat-links">
+            <div class="container">
+                <h3>Découvrez d'autres thématiques sur le sujet "<?php echo $parent_name; ?>"</h3>
+                <div class="siblings-cat">
+                    <?php 
+                        wp_list_categories( $siblings_params ); 
+                    ?>
+                </div>
+            </div>
+        </div>
+    <?php
     }
-    echo '</div>';
 }
 
 get_footer();

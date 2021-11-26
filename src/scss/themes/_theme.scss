@@ -98,23 +98,30 @@ h2 {
 /* Sub and siblings categories */
 .cat-links {
     text-align: center;
-    margin: 10rem auto;
+    padding: 10rem 0;
+    h3 {
+        margin-top: 0;
+    }
     .sub-cat,
     .siblings-cat {
         display: flex;
         justify-content: center;
         margin: 4rem 0;
+        .siblings-cat__item {
+            width: 100%;
+            max-width: 300px;
+            background-color: var(--dark-blue);
+            padding: 8rem 2rem;
+            margin-right: 1rem;
+            border-bottom-left-radius: 1rem;
+            border-top-right-radius: 1rem;
+        }
         a {
             display: block;
             text-align: center;
-            padding: 5rem 2rem;
-            margin-right: 1rem;
-            background-color: grey;
             font-family: $secondary-font-family;
             color: var(--white);
             text-decoration: none;
-            width: 100%;
-            max-width: 300px;
         }
     }
 }
