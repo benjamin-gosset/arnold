@@ -69,8 +69,9 @@ h4,
 main a {
     color: var(--orange);
     text-decoration: none;
+    border-bottom: 2px solid;
     &:hover {
-        text-decoration: underline;
+        border-bottom: 2px dotted;
     }
 }
 

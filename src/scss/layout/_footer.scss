@@ -1,5 +1,5 @@
 footer {
-    background-color: var(--dark-blue);
+    background-color: var(--brown);
     color: var(--white);
     text-align: center;
     padding: 2rem 0 0;
@@ -28,13 +28,12 @@ footer {
         color: var(--white);
         text-decoration: none;
         line-height: 1.5;
-        border-bottom: 1px solid;
         @include breakpoints(md) {
             font-size: 1rem;
         }
         &:hover,
         &:focus {
-            color: var(--yellow);
+            border-bottom: 1px solid;
         }        
     }
     .footer__cols {
@@ -87,14 +86,14 @@ footer {
                 border-bottom: none;
                 position: relative;
                 &:hover {
-                    color: var(--dark-blue);
+                    color: var(--white);
                 }
                 &::before {
                     content: "";
                     display: block;
                     width: rem(42px);
                     height: rem(42px);
-                    background-color: var(--yellow);
+                    background-color: var(--orange);
                     position: absolute;
                     z-index: 10;
                     border-radius: 50%;
@@ -116,13 +115,16 @@ footer {
     .footer__bottom-bar {
         font-size: .9rem;
         text-align: center;
-        background-color: var(--light-blue);
+        background-color: var(--dark-brown);
         @include breakpoints(md) {
             font-size: 1rem;
         }
         p {
             margin: 0;
             padding: .6rem 0;
+            a:hover {
+                color: var(--orange);
+            }
             svg {
                 width: 10px;
                 height: 10px;
