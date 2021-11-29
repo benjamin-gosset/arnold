@@ -110,11 +110,11 @@ h2 {
         justify-content: center;
         margin: 4rem 0;
         .siblings-cat__item {
-            color: var(--white);
+            color: var(--dark-blue);
             width: 100%;
             max-width: 300px;
-            background-color: var(--dark-blue);
-            padding: 8rem 2rem;
+            background-color: var(--white);
+            padding: 3rem 2rem;
             margin-right: 1rem;
             border-bottom-left-radius: 1rem;
             border-top-right-radius: 1rem;
@@ -144,19 +144,18 @@ h2 {
                 background-position: center;
             }
             &:hover {
-                color: var(--yellow);
+                color: var(--orange);
                 transform: translateY(.4rem);
-                background-color: #002233;
             }
             a {
                 display: block;
                 text-align: center;
                 font-family: $secondary-font-family;
-                color: var(--white);
+                color: var(--dark-blue);
                 text-decoration: none;
                 transition: all .2s ease;
                 &:hover {
-                    color: var(--yellow);
+                    color: var(--orange);
                 }
             }
             svg {

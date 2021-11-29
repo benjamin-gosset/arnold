@@ -66,6 +66,14 @@ h4,
     }
 }
 
+main a {
+    color: var(--orange);
+    text-decoration: none;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
 .intro {
     @include breakpoints(md) {
         font-size: rem(20px);

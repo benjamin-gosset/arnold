@@ -1,8 +1,9 @@
-$secondary-color: #000;
+$secondary-color: var(--dark-blue);
 $light-dark-blue: #28283f;
 
 :root {
     --dark-blue: #01273a;
+    --dark-blue-hover: #002233;
     --light-dark-blue: #28283f;
     --light-blue: #0067a6;
     --white: #FFFFFF;
@@ -12,4 +13,6 @@ $light-dark-blue: #28283f;
     --grey: #e4e3df;
     --green: #46b450;
     --red: #aa0000;
+    --orange: #d5440b;
+    --brown: #231f20;
 }
