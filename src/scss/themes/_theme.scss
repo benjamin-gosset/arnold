@@ -98,7 +98,9 @@ h2 {
 /* Sub and siblings categories */
 .cat-links {
     text-align: center;
-    padding: 10rem 0;
+    padding: 5rem 0;
+    margin-top: 5rem;
+    background-color: var(--beige2);
     h3 {
         margin-top: 0;
     }
@@ -108,6 +110,7 @@ h2 {
         justify-content: center;
         margin: 4rem 0;
         .siblings-cat__item {
+            color: var(--white);
             width: 100%;
             max-width: 300px;
             background-color: var(--dark-blue);
@@ -115,13 +118,52 @@ h2 {
             margin-right: 1rem;
             border-bottom-left-radius: 1rem;
             border-top-right-radius: 1rem;
-        }
-        a {
-            display: block;
-            text-align: center;
-            font-family: $secondary-font-family;
-            color: var(--white);
-            text-decoration: none;
+            transition: all .2s ease;
+            &:nth-child(1) {
+                background-image: url(../img/angle.svg);
+                background-repeat: repeat-x;
+                background-size: 30%;
+                background-position: 0 15rem;
+            }
+            &:nth-child(2) {
+                background-image: url(../img/circle.svg);
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: 10rem -10rem;
+            }
+            &:nth-child(3) {
+                background-image: url(../img/diamond-dots.svg);
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: -10rem 10rem;
+            }
+            &:nth-child(4) {
+                background-image: url(../img/plus-circle.svg);
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+            }
+            &:hover {
+                color: var(--yellow);
+                transform: translateY(.4rem);
+                background-color: #002233;
+            }
+            a {
+                display: block;
+                text-align: center;
+                font-family: $secondary-font-family;
+                color: var(--white);
+                text-decoration: none;
+                transition: all .2s ease;
+                &:hover {
+                    color: var(--yellow);
+                }
+            }
+            svg {
+                width: 2rem;
+                height: 2rem;
+                margin-top: 1rem;
+            }
         }
     }
 }

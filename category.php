@@ -30,7 +30,8 @@ if ( is_category() ) {
     $params = array( 
         'parent' =>  $cat_id, 
         'title_li' => '',
-        'style' => ''
+        'style' => '',
+        'walker' => new Walker_Reformated_Category()
     );
     if ( count( get_categories( $params ) ) ) {
         $cat = get_the_category(); 

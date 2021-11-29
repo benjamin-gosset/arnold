@@ -465,7 +465,7 @@ class Walker_Reformated_Category extends Walker_Category
 			$output .= $css_classes;
 			$output .= ">$link\n";
 		} elseif ( isset( $args['separator'] ) ) {
-			$output .= "\t<div class=\"siblings-cat__item\">$link" . $args['separator'] . "\n";
+			$output .= "\t<div class=\"siblings-cat__item card\">$link" . $args['separator'] . "\n";
 		} else {
 			$output .= "\t$link<br />\n";
 		}
@@ -474,7 +474,7 @@ class Walker_Reformated_Category extends Walker_Category
 	
 
     function end_el(&$output, $item, $depth=0, $args=array()) {
-		$output .= '<span></span></div>';
+		$output .= '<svg role="img" aria-label="Lire la suite"><use xlink:href="#circle_right" /></svg></div>';
 		return $output;
 	}
 }

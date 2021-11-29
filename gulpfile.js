@@ -22,7 +22,7 @@ const paths = {
     dest: "./dist/js/"
   },
   svg: {
-    src: "./src/img/*.svg",
+    src: "./src/img/sprite/*.svg",
     dest: "./dist/img/"
   },
   php: {
