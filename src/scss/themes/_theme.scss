@@ -11,18 +11,6 @@ img {
     text-align: center;
 }
 
-/*body::before {
-    content: '';
-    display: block;
-    width: 70vw;
-    height: 100vh;
-    background-color: #e6e6e6;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-}*/
-
 .container {
     width: 100%;
     margin: auto;
@@ -37,7 +25,7 @@ img {
 }
 
 .page-title-area {
-    background-color: var(--dark-blue);
+    background-color: var(--very-dark-blue);
     color: var(--white);
     position: relative;
     z-index: 10;
@@ -94,19 +82,48 @@ h2 {
 .wp-block-media-text {
     margin: 10rem 0;
     min-height: 450px;
+    figure {
+        position: relative;
+        &::before {
+            content: "";
+            display: block;
+            background-color: var(--grey);
+            width: 190px;
+            height: 190px;
+            position: absolute;
+            bottom: -10%;
+            left: -15%;
+            z-index: -1;
+        }
+    }
+    &.has-media-on-the-right {
+        figure {
+            position: relative;
+            &::before {
+                display: none;
+            }
+        }
+    }
     h2 {
-        margin-top: rem(32px);
+        margin-top: .5rem;
         margin-bottom: rem(32px);
+    }
+    .sup-title {
+        margin-bottom: 0;
+        font-size: .8rem;
+        text-transform: uppercase;
+        color: var(--light-blue);
     }
 }
 
 
 /* Sub and siblings categories */
 .cat-links {
+    background-color: var(--grey);
+    background-image: url(../img/topo.svg);
     text-align: center;
     padding: 5rem 0;
     margin-top: 5rem;
-    background-color: var(--beige2);
     h3 {
         margin-top: 0;
     }
@@ -119,39 +136,17 @@ h2 {
             color: var(--dark-blue);
             width: 100%;
             max-width: 300px;
-            background-color: var(--white);
-            padding: 3rem 2rem;
+            background-color: var(--beige);
+            padding: 6rem 2rem;
             margin-right: 1rem;
-            border-bottom-left-radius: 1rem;
-            border-top-right-radius: 1rem;
+            /*border-bottom-left-radius: .8rem;
+            border-top-right-radius: .8rem;*/
             transition: all .2s ease;
-            &:nth-child(1) {
-                background-image: url(../img/angle.svg);
-                background-repeat: repeat-x;
-                background-size: 30%;
-                background-position: 0 15rem;
-            }
-            &:nth-child(2) {
-                background-image: url(../img/circle.svg);
-                background-repeat: no-repeat;
-                background-size: cover;
-                background-position: 10rem -10rem;
-            }
-            &:nth-child(3) {
-                background-image: url(../img/diamond-dots.svg);
-                background-repeat: no-repeat;
-                background-size: contain;
-                background-position: -10rem 10rem;
-            }
-            &:nth-child(4) {
-                background-image: url(../img/plus-circle.svg);
-                background-repeat: no-repeat;
-                background-size: cover;
-                background-position: center;
-            }
+            border: 6px solid var(--dark-beige);
             &:hover {
                 color: var(--orange);
-                transform: translateY(.4rem);
+                transform: translateY(.2rem);
+                border: 6px solid var(--orange);
             }
             a {
                 display: block;

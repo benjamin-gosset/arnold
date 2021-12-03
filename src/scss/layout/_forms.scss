@@ -5,11 +5,17 @@
     textarea,
     select {
         width: 100%;
-        border-color: var(--light-dark-blue);
+        border-color: var(--dark-blue);
+        border-left-width: 0;
+        border-right-width: 0;
+        border-top-width: 0;
         border-width: 1px;
         border-style: solid;
         background-color: transparent;
         margin-top: .4rem;
+    }
+    textarea {
+        border: 1px solid;
     }
     .wpcf7-acceptance {
         font-size: $base-font-size;
