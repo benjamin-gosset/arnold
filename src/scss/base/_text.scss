@@ -8,10 +8,22 @@ body {
 }
 
 .breadcrumbs {
-    a,
+    position: relative;
+    z-index: 1;
+    a {
+        color: var(--white);
+        font-weight: normal;
+        text-decoration: none;
+        &:not(:nth-of-type(0)) {
+            margin: 0 .5rem;
+        }
+        &:hover {
+            text-decoration: underline;
+        }
+    }
     .breadcrumb_last {
-        color: var(--dark-blue);
-        font-size: .95rem;
+        font-weight: bold;
+        margin-left: .5rem;
     }
 }
 
@@ -68,10 +80,10 @@ h4,
 
 main a {
     color: var(--orange);
-    text-decoration: none;
-    border-bottom: 2px solid;
+    font-weight: bold;
+    text-decoration: underline;
     &:hover {
-        border-bottom: 2px dotted;
+        text-decoration: none;
     }
 }
 

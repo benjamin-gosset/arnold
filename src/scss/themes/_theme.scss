@@ -37,11 +37,13 @@ img {
 }
 
 .page-title-area {
-    color: var(--dark-blue);
+    background-color: var(--dark-blue);
+    color: var(--white);
     position: relative;
     z-index: 10;
     @include breakpoints(md) {
-        margin-top: 4rem;
+        padding-top: 10rem;
+        padding-bottom: 5rem;
     }
     .container {
         padding-top: rem(44px);
@@ -54,6 +56,9 @@ img {
     .breadcrumbs {
         margin-top: 0;
         margin-bottom: rem(20px);
+    }
+    + .container {
+        padding-top: 2rem;
     }
 }
 
@@ -88,6 +93,7 @@ h2 {
 /* Services blocks */
 .wp-block-media-text {
     margin: 10rem 0;
+    min-height: 450px;
     h2 {
         margin-top: rem(32px);
         margin-bottom: rem(32px);

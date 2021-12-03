@@ -1,5 +1,5 @@
 footer {
-    background-color: var(--brown);
+    background-color: var(--dark-brown);
     color: var(--white);
     text-align: center;
     padding: 2rem 0 0;
@@ -115,7 +115,7 @@ footer {
     .footer__bottom-bar {
         font-size: .9rem;
         text-align: center;
-        background-color: var(--dark-brown);
+        background-color: var(--brown);
         @include breakpoints(md) {
             font-size: 1rem;
         }
