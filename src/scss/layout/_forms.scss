@@ -23,23 +23,33 @@
             margin-left: 0;;
             label {
                 display: flex;
+                @include breakpoints(md) {
+                    display: initial;
+                }
             }
             input[type=checkbox] {
                 width: 8%;
                 margin-right: .8rem;
+                @include breakpoints(md) {
+                    width: auto;
+                    margin-right: .1rem;
+                }
             }
         }
     }
     .wpcf7-submit {
-        border: 2px solid var(--yellow);
-        background-color: var(--yellow);
+        border: 2px solid var(--orange);
+        background-color: var(--orange);
+        color: var(--white);
         padding: .8rem 0;
         font-weight: bold;
+        transition: all .4s ease;
         &:disabled {
             cursor: not-allowed;
         }
         &:hover {
             background-color: var(--white);
+            color: var(--orange);
             cursor: pointer;
         }
     }
@@ -62,5 +72,43 @@
         width: 100%;
         margin: 0;
         padding: 1rem;
+    }
+    p + p,
+    .contact-form-column p {
+        margin-top: 2rem;
+    }
+    .contact-form-wrapper {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 2rem;
+        .contact-form-column {
+            flex-basis: 45%;
+        }
+    }
+    .wpcf7-radio {
+        display: flex;
+        width: 100%;
+        margin-top: 1rem;
+        .wpcf7-list-item {
+            display: flex;
+            flex-basis: 24%;
+            flex-direction: row;
+            margin-left: 0;
+            input[type=radio] {
+                width: auto;
+                margin-top: 0;
+                margin-right: .5rem;
+            }
+        }
+    }
+    .wpcf7-select {
+        margin-top: 1rem; 
+        option {
+            margin-left: 0;
+        }
+    }
+    .devis-submit {
+        width: 30%;
+        margin-top: 2rem;
     }
 }

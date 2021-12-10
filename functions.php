@@ -44,20 +44,53 @@ add_action( 'wp_enqueue_scripts', 'arnold_register_assets' );
 function arnold_register_assets() {
     // Styles
     wp_enqueue_style( 'arnold', get_template_directory_uri() . '/dist/css/main.min.css', array(), '1.0');
+	
 	if ( is_front_page() ) {
 		wp_enqueue_style( 'swiper', get_template_directory_uri() . '/dist/css/vendor/swiper-bundle.min.css', array(), '1.0');
 	}
+
+	if ( is_page( 19 ) ) {
+		wp_enqueue_style( 'leaflet', '//unpkg.com/leaflet@1.7.1/dist/leaflet.css', array(), '1.0');
+	}
+	
 
     // Scripts
     if ( is_front_page() ) {
 		wp_enqueue_script( 'swiper', get_template_directory_uri() . '/dist/js/vendor/swiper-bundle.min.js', array(), '1.0', true);
 	}
+
+	if ( is_page( 19 ) ) {
+		wp_enqueue_script( 'leaflet', '//unpkg.com/leaflet@1.7.1/dist/leaflet.js', array(), '1.0', true);
+	}
+
 	wp_enqueue_script( 'arnold', get_template_directory_uri() . '/dist/js/app.js', array(), '1.0', true);
 }
 
+/** 
+ * Add integrity and crossorigin for Leaflet CSS and JS 
+ **/
+add_filter( 'style_loader_tag', 'add_leaflet_css_attributes', 10, 2 );
+
+function add_leaflet_css_attributes( $html, $handle ) {
+    if ( 'leaflet' === $handle ) {
+        return str_replace( "media='all'", "media='all' integrity='sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==' crossorigin=''", $html );
+    }
+    return $html;
+}
+
+add_filter( 'script_loader_tag', 'add_leaflet_js_attributes', 10, 3 );
+
+function add_leaflet_js_attributes( $tag, $handle, $src ) {
+    if ( 'leaflet' === $handle ) {
+        $tag = '<script src="' . esc_url( $src ) . '" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>';
+    }
+    return $tag;
+}
+
+
 /**
  * Register menus
- */ 
+ **/ 
 register_nav_menus( array(
 	'primary-menu' => esc_html__( 'Primary menu', 'arnold' ),
 	'topbar-menu' => esc_html__( 'Top bar menu', 'arnold' ),
