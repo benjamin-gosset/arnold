@@ -71,7 +71,6 @@
                             <h1><span><?php the_title(); ?></span></h1>
                         </div>
                     </section>
-
                 <?php } elseif ( is_category() ) { ?>
                     <section class="page-title-area">
                         <div class="container">
@@ -83,8 +82,18 @@
                             <h1><?php single_cat_title(''); ?></h1>
                         </div>
                     </section>
-                <?php }
-            ?>
-        
-
-            
+                <?php } elseif ( is_single() ) { ?>
+                    <section class="page-title-area">
+                        <div class="container">
+                            <?php
+                                $post_date = get_the_date();
+                                if ( function_exists('yoast_breadcrumb') ) {
+                                    yoast_breadcrumb( '<p class="breadcrumbs">','</p>' );
+                                } 
+                            ?>
+                            <h1><span><?php the_title(); ?></span></h1>
+                            <span class="post-date">Publié le <?php echo $post_date; ?></span>
+                        </div>
+                    </section>
+                <?php
+                }

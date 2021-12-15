@@ -2,10 +2,11 @@
 
 get_header();
 
-$category = get_queried_object();
-$cat_id   = $category->term_id;
+$cat_id = get_queried_object_id();
 
-// Display content from gut cat with the actual category
+/**
+ * Display content from gut cat with the actual category
+ **/ 
 $args = array( 
     'post_type'     => 'content_categories',
     'post_status'   => 'publish',
@@ -25,8 +26,54 @@ endwhile;
 
 wp_reset_postdata();
 
+/**
+ * 
+ * Display posts from this category
+ * 
+ */
+$posts_args = array( 
+    'post_type'     => 'post',
+    'post_status'   => 'publish',
+    'post_per_page' => 6,
+    'cat'  => $cat_id
+);
+
+$posts_query = new WP_Query( $posts_args );
+$posts_number = $posts_query->found_posts;
+
+if ( $posts_number >= 1 ) { ?>
+    <div class="category-articles">
+        <div class="container">
+            <h3> Les derniers articles</h3>
+            <div class="category-articles__wrapper">
+                <?php
+                    while ( $posts_query->have_posts() ) :
+                        $posts_query->the_post(); 
+                        $post_thumbnail = get_the_post_thumbnail_url();
+                        $post_title = get_the_title();
+                        $post_permalink = get_permalink();
+                        ?>
+                        <div class="category-articles__item card">
+                            <img src="<?php echo $post_thumbnail; ?>">
+                            <h4><a href="<?php echo $post_permalink; ?>"><?php echo $post_title; ?></a></h4>
+                        </div>
+                        <?php
+                    endwhile;
+                ?>
+            </div>
+        </div>
+    </div>
+<?php    
+}
+
+wp_reset_postdata();
+
+/**
+ * 
+ * Display child or siblings categories
+ * 
+ */
 if ( is_category() ) {
-    $cat_id = get_queried_object_id();
     $params = array( 
         'parent' =>  $cat_id, 
         'title_li' => '',

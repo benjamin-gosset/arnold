@@ -1,5 +1,7 @@
 <?php get_header(); ?>
 
-<code>single.php</code>
-    
+<div class="container">
+    <?php the_content(); ?>
+</div>
+
 <?php get_footer(); ?>
