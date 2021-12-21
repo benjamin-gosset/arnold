@@ -1,4 +1,9 @@
-        <a href="#top" class="back-top">&wedge;<span class="sr-only">Haut de page</span></a>
+        <a href="#top" class="back-top">
+            <svg role="img" aria-label="Benjamin Gosset - Accueil" class="normal">
+                <use xlink:href="#back-top" />
+            </svg>
+            <span class="sr-only">Haut de page</span>
+        </a>
     </main>
     <?php wp_footer(); ?>
     <footer role="contentinfo">

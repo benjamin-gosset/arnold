@@ -263,10 +263,23 @@ nav {
     position: fixed;
     bottom: 1rem;
     right: 1rem;
-    background-color: var(--white);
-    padding: .4rem .8rem;
-    color: var(--dark-blue);
-    text-decoration: none;
-    font-weight: bold;
+    background-color: var(--orange);
     border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    place-content: center;
+    align-items: center;
+    border: 2px solid transparent;
+    color: var(--white);
+    transition: all .4s ease;
+    &:hover {
+        background-color: var(--white);
+        color: var(--orange);
+        border-color: var(--orange);
+    }
+    svg {
+        width: rem(16px);
+        height: rem(18px);
+    }
 }
