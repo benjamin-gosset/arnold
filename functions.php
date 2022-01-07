@@ -45,9 +45,9 @@ function arnold_register_assets() {
     // Styles
     wp_enqueue_style( 'arnold', get_template_directory_uri() . '/dist/css/main.min.css', array(), '1.0');
 	
-	if ( is_front_page() ) {
+	/*if ( is_front_page() ) {
 		wp_enqueue_style( 'swiper', get_template_directory_uri() . '/dist/css/vendor/swiper-bundle.min.css', array(), '1.0');
-	}
+	}*/
 
 	if ( is_page( 19 ) ) {
 		wp_enqueue_style( 'leaflet', '//unpkg.com/leaflet@1.7.1/dist/leaflet.css', array(), '1.0');
@@ -55,9 +55,9 @@ function arnold_register_assets() {
 	
 
     // Scripts
-    if ( is_front_page() ) {
+    /*if ( is_front_page() ) {
 		wp_enqueue_script( 'swiper', get_template_directory_uri() . '/dist/js/vendor/swiper-bundle.min.js', array(), '1.0', true);
-	}
+	}*/
 
 	if ( is_page( 19 ) ) {
 		wp_enqueue_script( 'leaflet', '//unpkg.com/leaflet@1.7.1/dist/leaflet.js', array(), '1.0', true);
