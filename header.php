@@ -19,23 +19,7 @@
 
     <header class="header" role="banner">
         <div class="container">
-            <?php 
-                if ( is_front_page() ) { ?>
-                    <h1 class="logo">
-                        <a href="<?php echo site_url(); ?>">
-                            <svg role="img" aria-label="Benjamin Gosset - Accueil" class="normal">
-                                <use xlink:href="#logo-bg" />
-                            </svg>
-                        </a>
-                    </h1>
-                <?php } else { ?>
-                    <a href="<?php echo site_url(); ?>" class="logo">
-                        <svg role="img" aria-label="Benjamin Gosset - Accueil" class="normal">
-                            <use xlink:href="#logo-bg" />
-                        </svg>
-                    </a>
-                <?php }
-            ?>
+            <a href="<?php echo site_url(); ?>" class="brand">Benjamin Gosset</a>
             <button class="header__toggle hamburger" type="button" aria-expanded="false">
                 <span class="hamburger__box">
                     <span class="hamburger__inner"></span>
