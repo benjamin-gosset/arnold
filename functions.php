@@ -167,7 +167,7 @@ function arnold_content_categories() {
 		'menu_icon'             => 'dashicons-admin-plugins',
 		'show_in_admin_bar'     => true,
 		'show_in_nav_menus'     => false,
-		'can_export'            => false,
+		'can_export'            => true,
 		'has_archive'           => true,
 		'exclude_from_search'   => true,
 		'publicly_queryable'    => true,
