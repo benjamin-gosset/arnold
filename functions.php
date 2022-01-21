@@ -111,6 +111,34 @@ function arnold_remove_default_taxos() {
 }
 
 /**
+ * Deactivate internal pings
+ */
+function arnold_no_internal_ping( &$links ) {
+	$home = get_option( 'home' );
+	foreach ( $links as $l => $link ) {
+		if ( 0 === strpos( $link, $home ) ) {
+			unset($links[$l]);
+		}
+	}
+}
+add_action( 'pre_ping' , 'arnold_no_internal_ping' );
+
+/**
+ * Add alt column for medias
+ */
+function arnold_adm_media_attachment_alt($cols) {
+	$cols["alt"] = 'ALT Text';
+	return $cols;
+}
+function arnold_adm_media_attachment_alt_content($column_name, $id) {
+	if ( $column_name === 'alt' ) {
+		echo get_post_meta( $id, '_wp_attachment_image_alt', true);
+	}
+}
+add_filter('manage_media_columns', 'arnold_adm_media_attachment_alt', 1);
+add_action('manage_media_custom_column', 'arnold_adm_media_attachment_alt_content', 1, 2);
+
+/**
  * Add categories to pages
  */
 function arnold_categories_support() {
