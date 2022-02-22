@@ -14,7 +14,7 @@ body {
         color: var(--white);
         font-weight: normal;
         text-decoration: none;
-        &:not(:nth-of-type(0)) {
+        &:not(:nth-of-type(1)) {
             margin: 0 .5rem;
         }
         &:hover {

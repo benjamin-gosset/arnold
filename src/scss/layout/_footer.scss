@@ -75,7 +75,7 @@ footer {
         .social-links {
             display: flex;
             justify-content: space-between;
-            margin-top: 1.5rem;
+            margin: 1.5rem auto;
             width: 60%;
             a {
                 display: flex;
@@ -116,6 +116,7 @@ footer {
         font-size: .9rem;
         text-align: center;
         background-color: var(--dark-blue);
+        margin-top: 2rem;
         @include breakpoints(md) {
             font-size: 1rem;
         }

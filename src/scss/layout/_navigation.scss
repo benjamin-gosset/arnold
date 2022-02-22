@@ -4,6 +4,9 @@
     border: 0;
     cursor: pointer;
     margin-top: rem(15px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     &:hover {
         .hamburger__inner::before {
             transform: translateY(-2px);
@@ -18,7 +21,7 @@
 }
 .hamburger__box {
     display: block;
-    width: rem(24px);
+    width: rem(32px);
     height: rem(18px);
 }
 .hamburger__inner {
@@ -34,29 +37,46 @@
 .hamburger__inner::before,
 .hamburger__inner::after {
     position: absolute;
-    width: rem(24px);
+    width: rem(32px);
     height: rem(2px);
     background-color: var(--dark-blue);
     border-radius: 1px;
 }
+
+.hamburger__inner {
+    width: rem(24px);
+    transform: rotate(0);
+    transition: transform .2s ease-out;
+}
+
 .hamburger__inner::before {
     top: -.5rem;
 }
 .hamburger__inner::after {
     bottom: -.5rem;
+    transform: rotate(0);
+    transition: transform .2s ease-out;
 }
 
 .hamburger[aria-expanded="true"] {
     .hamburger__inner {
-        transform: rotate(45deg);
+        transform: rotate(-45deg);
+        width: rem(32px);
+        transition: transform .2s ease-out;
         &::before {
             opacity: 0;
         }
         &::after {
             transform: rotate(-90deg);
             bottom: 0;
+            transition: transform .2s ease-out;
         }
     }
+}
+
+.hamburger__label {
+    text-transform: uppercase;
+    font-size: rem(13px);
 }
 
 /* Main Nav */
@@ -84,11 +104,11 @@ nav {
             display: block;
             position: absolute;
             width: 100%;
-            transform: translateY(80px);
             background-color: var(--white);
             left: 0;
             right: 0;
             z-index: 150;
+            top: 120px;
         }
         li {
             position: relative;
@@ -108,7 +128,7 @@ nav {
                     top: 0;
                     bottom: 0;
                     right: 0;
-                    height: 44px;
+                    height: 46px;
                     border-top: 1px solid var(--light-dark-blue);
                     border-bottom: 1px solid var(--light-dark-blue);
                     &:hover {
@@ -122,8 +142,10 @@ nav {
                         display: none;
                     }
                 }
-                @include breakpoints(md) {
-                    svg {
+                svg {
+                    display: none;
+                    @include breakpoints(md) {
+                        display: block;
                         margin-left: .5rem;
                     }
                 }
@@ -207,17 +229,21 @@ nav {
             &.current-menu-parent > a {
                 padding-bottom: 6px;
                 &::after {
-                    content: "";
-                    display: block;
-                    position: absolute;
-                    width: 100%;
-                    height: .25rem;
-                    background-color: var(--orange);
-                    transform: translateY(5px);
+                    @include breakpoints(md) {
+                        content: "";
+                        display: block;
+                        position: absolute;
+                        width: 100%;
+                        height: .25rem;
+                        background-color: var(--orange);
+                        transform: translateY(5px);
+                    }
                 }
             }
             &:hover > a::after {
-                width: 100%;
+                @include breakpoints(md) {
+                    width: 100%;
+                }
             }
             &.current-menu-item > a {
                 color: var(--orange);
@@ -235,6 +261,7 @@ nav {
 }
 
 .header__cta {
+    display: none;
     @include breakpoints(md) {
         display: flex;
         align-items: center;

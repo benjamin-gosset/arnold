@@ -24,6 +24,7 @@
                 <span class="hamburger__box">
                     <span class="hamburger__inner"></span>
                 </span>
+                <span class="hamburger__label">Menu</span>
             </button>
             <nav role="navigation" aria-label="Menu principal" class="main-nav">
                 <?php 

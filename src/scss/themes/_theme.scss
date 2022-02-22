@@ -39,6 +39,7 @@ img {
     }
     .container {
         padding-top: rem(44px);
+        padding-bottom: rem(44px);
     }
     h1,
     .breadcrumbs {
@@ -88,8 +89,10 @@ h2 {
 
 /* Services blocks */
 .wp-block-media-text {
-    margin: 10rem 0;
-    min-height: 450px;
+    @include breakpoints(md) {
+        margin: 10rem 0;
+        min-height: 450px;
+    }
     figure {
         position: relative;
         &::before {
@@ -135,6 +138,12 @@ h2 {
         font-size: .8rem;
         text-transform: uppercase;
         color: var(--light-blue);
+    }
+    .wp-block-media-text__content {
+       margin-top: 2rem;
+       @include breakpoints(md) {
+           margin-top: 0;
+       }
     }
 }
 
