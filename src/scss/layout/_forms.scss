@@ -81,19 +81,30 @@
         display: flex;
         justify-content: space-between;
         margin-bottom: 2rem;
+        flex-direction: column;
+        @include breakpoints(md) {
+            flex-direction: row;
+        }
         .contact-form-column {
-            flex-basis: 45%;
+            flex-basis: 100%;
+            @include breakpoints(md) {
+                flex-basis: 45%;
+            }
         }
     }
     .wpcf7-radio {
         display: flex;
         width: 100%;
         margin-top: 1rem;
+        flex-wrap: wrap;
         .wpcf7-list-item {
             display: flex;
-            flex-basis: 24%;
+            flex-basis: 50%;
             flex-direction: row;
             margin-left: 0;
+            @include breakpoints(md) {
+                flex-basis: 24%;
+            }
             input[type=radio] {
                 width: auto;
                 margin-top: 0;

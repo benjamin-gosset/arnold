@@ -84,7 +84,10 @@ h2 {
 }
 
 .sub-intro {
-    width: 70%;
+    width: 100%;
+    @include breakpoints(md) {
+        width: 70%;
+    }
 }
 
 /* Services blocks */

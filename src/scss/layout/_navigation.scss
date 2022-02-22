@@ -149,15 +149,16 @@ nav {
                         margin-left: .5rem;
                     }
                 }
-                &:hover ul {
+                &:hover ul,
+                &:focus ul {
                     @include breakpoints(md) {
                         display: block;
                         position: absolute;
                         white-space: nowrap;
                         background-color: var(--white);
-                        transform: translateY(3px);
-                        z-index: 100;
+                        z-index: 1000;
                         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+                        top: 33px;
                     }
                     li {
                         padding: 0;
@@ -298,6 +299,7 @@ nav {
     border: 2px solid transparent;
     color: var(--white);
     transition: all .4s ease;
+    z-index: 5000;
     &:hover {
         background-color: var(--white);
         color: var(--orange);
