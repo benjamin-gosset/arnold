@@ -151,9 +151,18 @@ h2 {
 .category-articles__wrapper {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
+    @include breakpoints(md) {
+        justify-content: space-between;
+    }
     .category-articles__item {
-        flex-basis: 32%;
+        flex-basis: 100%;
+        @include breakpoints(md) {
+            flex-basis: 32%;
+        }
+        h4 {
+            margin-top: .2rem;
+        }
         a {
             color: var(--dark-blue);
             text-decoration: none;
@@ -171,32 +180,41 @@ h2 {
 /* Sub and siblings categories */
 .cat-links {
     background-color: var(--grey);
-    background-image: url(../img/topo.svg);
+    /*background-image: url(../img/topo.svg);*/
     text-align: center;
-    padding: 5rem 0;
+    padding: 5rem 0 0;
     margin-top: 5rem;
+    @include breakpoints(md) {
+        padding: 5rem 0;
+    }
     h3 {
         margin-top: 0;
+    }
+    a {
+        margin-bottom: 1rem;
     }
     .sub-cat,
     .siblings-cat {
         display: flex;
         justify-content: center;
-        margin: 4rem 0;
+        margin: 4rem 0 0;
+        flex-wrap: wrap;
         .siblings-cat__item {
             color: var(--dark-blue);
             width: 100%;
             max-width: 300px;
-            background-color: var(--beige);
+            background-color: var(--white);
             padding: 3rem 2rem;
             margin-right: 1rem;
-            border-bottom-left-radius: .8rem;
-            border-top-right-radius: .8rem;
             transition: all .2s ease;
             border: 6px solid var(--dark-beige);
+            margin-bottom: 2rem;
             &:hover {
                 color: var(--orange);
                 border: 6px solid var(--orange);
+                svg path {
+                    fill: var(--orange);
+                }
             }
             a {
                 display: block;

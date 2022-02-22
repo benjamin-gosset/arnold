@@ -24,7 +24,7 @@
                         </svg>
                     </a>
                     <a href="https://www.linkedin.com/in/benjamin-gosset-9ab26798/" target="_blank">
-                        <svg role="img" aria-label="Compte LinkedIn de Benjamin Gosset (nouvelle fenêtre">
+                        <svg role="img" aria-label="Compte LinkedIn de Benjamin Gosset (nouvelle fenêtre)">
                             <use xlink:href="#linkedin-icon" />
                         </svg>
                     </a>
