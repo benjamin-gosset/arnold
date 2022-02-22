@@ -18,22 +18,22 @@
                 <p class="baseline">Développeur WordPress <br>freelance situé à Caen</p>
                 <a href="mailto:contact@benjamin-gosset.fr">contact@benjamin-gosset.fr</a>
                 <div class="social-links">
-                    <a href="https://twitter.com" target="_blank">
+                    <a href="https://twitter.com/benjamingosset" target="_blank">
                         <svg role="img" aria-label="Compte Twitter de Benjamin Gosset (nouvelle fenêtre)">
                             <use xlink:href="#twitter" />
                         </svg>
                     </a>
-                    <a href="https://linkedin.com" target="_blank">
+                    <a href="https://www.linkedin.com/in/benjamin-gosset-9ab26798/" target="_blank">
                         <svg role="img" aria-label="Compte LinkedIn de Benjamin Gosset (nouvelle fenêtre)">
                             <use xlink:href="#linkedin-icon" />
                         </svg>
                     </a>
-                    <a href="https://wordpress.org" target="_blank">
+                    <a href="https://profiles.wordpress.org/benjamingosset/" target="_blank">
                         <svg role="img" aria-label="Profil WordPress de Benjamin Gosset (nouvelle fenêtre)">
                             <use xlink:href="#wordpress-icon" />
                         </svg>
                     </a>
-                    <a href="https://github.com" target="_blank">
+                    <a href="https://github.com/benjamin-gosset" target="_blank">
                         <svg role="img" aria-label="Compte GitHub de Benjamin Gosset (nouvelle fenêtre)">
                             <use xlink:href="#github-icon" />
                         </svg>
@@ -59,7 +59,7 @@
         </div>
         <div class="footer__bottom-bar">
             <p>Benjamin Gosset - <?php echo date('Y'); ?> - Fièrement propulsé par 
-                <a href="https://wordpress.org" target="_blank" aria-label="Site de WordPress (nouvelle fenêtre)">WordPress 
+                <a href="https://fr.wordpress.org" target="_blank" aria-label="Site de WordPress (nouvelle fenêtre)">WordPress 
                     <svg role="img" aria-label="">
                         <use xlink:href="#external-link" />
                     </svg>
