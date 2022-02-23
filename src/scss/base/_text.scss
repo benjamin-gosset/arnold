@@ -52,7 +52,7 @@ h1 {
     font-size: 2rem;
     font-family: $heading-font;
     @include breakpoints(md) {
-        font-size: rem(64px);
+        font-size: rem(40px);
     }
 }
 
