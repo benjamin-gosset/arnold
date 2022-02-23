@@ -49,7 +49,7 @@ if ( $posts_number >= 1 ) { ?>
                 <?php
                     while ( $posts_query->have_posts() ) :
                         $posts_query->the_post(); 
-                        $post_thumbnail = get_the_post_thumbnail_url();
+                        $post_thumbnail = get_field('miniature');
                         $post_title = get_the_title();
                         $post_permalink = get_permalink();
                         ?>
