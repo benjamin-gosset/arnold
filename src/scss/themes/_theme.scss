@@ -57,6 +57,7 @@ img {
 
 .main-content {
     margin-top: 2rem;
+    padding-bottom: 2rem;
 }
 
 .home .main-content {
@@ -235,6 +236,17 @@ h2 {
                 height: 2rem;
             }
         }
+    }
+}
+
+/* Skills */
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    .skills__item {
+        flex-basis: 25%;
+        margin-bottom: 1rem;
+        text-align: center;
     }
 }
 
