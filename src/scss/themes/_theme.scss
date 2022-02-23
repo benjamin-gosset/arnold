@@ -15,6 +15,18 @@ img {
     text-align: center;
 }
 
+a[href*="//"]:not([href*="arnold.local"])::after {
+    content: "";
+    width: 10px;
+    height: 10px;
+    margin-left: 4px;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQiIGhlaWdodD0iMTQiIHZpZXdCb3g9IjAgMCAxNCAxNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEuNDI4NTcgMTRMMTEuOTc4NiAzLjQ0OTk5TDExLjk4NTcgN0wxNCA3TDE0IC01LjcyMjA1ZS0wNkw3IC02LjMzNDAxZS0wNkw3IDIuMDE0MjhMMTAuNTUgMi4wMjE0MkwxLjI0ODllLTA3IDEyLjU3MTRMMS40Mjg1NyAxNFoiIGZpbGw9IiNkNTQ0MGIiLz4KPC9zdmc+Cg==);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-block;
+}
+
 .container {
     width: 100%;
     margin: auto;
@@ -233,7 +245,7 @@ h2 {
             padding: 3rem 2rem;
             margin-right: 1rem;
             transition: all .2s ease;
-            border: 6px solid var(--dark-beige);
+            border: 6px solid transparent;
             margin-bottom: 2rem;
             &:hover {
                 color: var(--orange);
