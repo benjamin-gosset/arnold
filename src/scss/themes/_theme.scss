@@ -48,7 +48,9 @@ img {
         left: 0;
         right: 0;
         background: rgb(1,23,34);
-        background: linear-gradient(90deg, rgba(1,23,34,1) 0%, rgba(125,137,142,1) 58%, rgba(255,255,255,0) 100%);
+        @include breakpoints(md) {
+            background: linear-gradient(90deg, rgba(1,23,34,1) 0%, rgba(125,137,142,1) 58%, rgba(255,255,255,0) 100%);
+        }
     }
     .container {
         padding-top: rem(44px);
