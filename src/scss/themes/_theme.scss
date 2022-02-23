@@ -29,13 +29,26 @@ img {
 }
 
 .page-title-area {
-    background-color: var(--very-dark-blue);
+    /*background-color: var(--very-dark-blue);*/
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center right;
     color: var(--white);
     position: relative;
     z-index: 10;
     @include breakpoints(md) {
-        padding-top: 5rem;
-        padding-bottom: 5rem;
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+    }
+    &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgb(1,23,34);
+        background: linear-gradient(90deg, rgba(1,23,34,1) 0%, rgba(125,137,142,1) 58%, rgba(255,255,255,0) 100%);
     }
     .container {
         padding-top: rem(44px);
@@ -52,6 +65,13 @@ img {
     }
     + .container {
         padding-top: 2rem;
+    }
+}
+
+.single-post .page-title-area h1 {
+    width: 100%;
+    @include breakpoints(md) {
+        width: 70%;
     }
 }
 
