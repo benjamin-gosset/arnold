@@ -176,12 +176,13 @@ h2 {
     flex-wrap: wrap;
     justify-content: center;
     @include breakpoints(md) {
-        justify-content: space-between;
+        justify-content: initial;
     }
     .category-articles__item {
         flex-basis: 100%;
         @include breakpoints(md) {
             flex-basis: 32%;
+            margin-right: .6rem;
         }
         h4 {
             margin-top: .2rem;
