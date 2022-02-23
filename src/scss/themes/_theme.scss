@@ -27,6 +27,11 @@ a[href*="//"]:not([href*="benjamin-gosset.fr"])::after {
     display: inline-block;
 }
 
+.footer__bottom-bar a::after, 
+.social-links a::after {
+    display: none !important;
+}
+
 .container {
     width: 100%;
     margin: auto;
