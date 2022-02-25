@@ -302,3 +302,14 @@ h2 {
 #contact-map { 
     height: 100%; 
 }
+
+.error404 {
+    main > .container {
+        text-align: center;
+        padding: 8rem 0;
+        img {
+            width: 100px;
+            height: auto;
+        }
+    }
+}

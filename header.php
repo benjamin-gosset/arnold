@@ -103,5 +103,18 @@
                             <span class="post-date">Publié le <?php echo $post_date; ?></span>
                         </div>
                     </section>
-                <?php
+                <?php } elseif ( is_404() ) { 
+                    $error_img = get_template_directory_uri() . '/dist/img/error-banner.jpg';
+                    ?>
+                    <section class="page-title-area" style="background-image: url(<?php echo $error_img; ?>);">
+                        <div class="container">
+                            <?php
+                                if ( function_exists('yoast_breadcrumb') ) {
+                                    yoast_breadcrumb( '<p class="breadcrumbs">','</p>' );
+                                } 
+                            ?>
+                            <h1>Page introuvable</h1>
+                        </div>
+                    </section>
+                <?php    
                 }
