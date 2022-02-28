@@ -138,15 +138,17 @@ h2 {
     figure {
         position: relative;
         &::before {
-            content: "";
-            display: block;
-            background-color: var(--grey);
-            width: 80px;
-            height: 80px;
-            position: absolute;
-            bottom: -5%;
-            left: -5%;
-            z-index: -1;
+            @include breakpoints(md) {
+                content: "";
+                display: block;
+                background-color: var(--grey);
+                width: 80px;
+                height: 80px;
+                position: absolute;
+                bottom: -5%;
+                left: -5%;
+                z-index: -1;
+            }
         }
     }
     &.has-media-on-the-right {
@@ -156,17 +158,19 @@ h2 {
                 display: none;
             }
             &::after {
-                content: "";
-                display: block;
-                width: 76px;
-                height: 154px;
-                background-image: url(../img/square-dots.svg);
-                background-size: contain;
-                transform: rotate(180deg);
-                position: absolute;
-                right: -74px;
-                top: 40%;
-                z-index: -1;
+                @include breakpoints(md) {
+                    content: "";
+                    display: block;
+                    width: 76px;
+                    height: 154px;
+                    background-image: url(../img/square-dots.svg);
+                    background-size: contain;
+                    transform: rotate(180deg);
+                    position: absolute;
+                    right: -74px;
+                    top: 40%;
+                    z-index: -1;
+                }
             }
         }
     }
@@ -311,11 +315,5 @@ h2 {
             width: 100px;
             height: auto;
         }
-    }
-}
-
-.cmplz-cookiebanner.cmplz-show {
-    @include breakpoints(md) {
-        width: 87%;
     }
 }
