@@ -17,7 +17,7 @@ body {
         &:not(:nth-of-type(1)) {
             margin: 0 .5rem;
         }
-        &:hover {
+        @include hover {
             text-decoration: underline;
         }
     }
@@ -97,7 +97,7 @@ h4,
 main a {
     color: var(--orange);
     text-decoration: underline;
-    &:hover {
+    @include hover {
         text-decoration: none;
     }
 }

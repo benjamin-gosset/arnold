@@ -7,7 +7,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    &:hover {
+    @include hover {
         .hamburger__inner::before {
             transform: translateY(-2px);
         }
@@ -130,7 +130,7 @@ nav {
                     right: 0;
                     border-top: 1px solid var(--light-dark-blue);
                     border-bottom: 1px solid var(--light-dark-blue);
-                    &:hover {
+                    @include hover {
                         cursor: pointer;
                         background-color: var(--dark-blue);
                     }
@@ -148,16 +148,17 @@ nav {
                         margin-left: .5rem;
                     }
                 }
-                &:hover ul,
-                &:focus ul {
-                    @include breakpoints(md) {
-                        display: block;
-                        position: absolute;
-                        white-space: nowrap;
-                        background-color: var(--white);
-                        z-index: 1000;
-                        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-                        top: 33px;
+                @include hover {
+                    ul {
+                        @include breakpoints(md) {
+                            display: block;
+                            position: absolute;
+                            white-space: nowrap;
+                            background-color: var(--white);
+                            z-index: 1000;
+                            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+                            top: 33px;
+                        }
                     }
                     li {
                         padding: 0;
@@ -206,7 +207,7 @@ nav {
                 padding-top: 10px;
                 padding-bottom: 10px;
                 border-top: 1px solid var(--light-dark-blue);
-                &:hover {
+                @include hover {
                     background-color: rgba(255,255,255,0.1); 
                 }
                 &::after {
@@ -241,9 +242,11 @@ nav {
                     }
                 }
             }
-            &:hover > a::after {
-                @include breakpoints(md) {
-                    width: 100%;
+            @include hover { 
+                > a::after {
+                    @include breakpoints(md) {
+                        width: 100%;
+                    }
                 }
             }
             &.current-menu-item > a {
@@ -279,7 +282,7 @@ nav {
         @include breakpoints(md) {
             padding: .5rem 1rem;
         }
-        &:hover {
+        @include hover {
             background-color: rgba(0,0,0,1); 
         }
     }
@@ -300,7 +303,7 @@ nav {
     color: var(--white);
     transition: all .4s ease;
     z-index: 5000;
-    &:hover {
+    @include hover {
         background-color: var(--white);
         color: var(--orange);
         border-color: var(--orange);

@@ -47,7 +47,7 @@
         &:disabled {
             cursor: not-allowed;
         }
-        &:hover {
+        @include hover {
             background-color: var(--white);
             color: var(--orange);
             cursor: pointer;

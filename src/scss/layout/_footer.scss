@@ -31,8 +31,7 @@ footer {
         @include breakpoints(md) {
             font-size: 1rem;
         }
-        &:hover,
-        &:focus {
+        @include hover {
             border-bottom: 1px solid;
         }        
     }
@@ -88,7 +87,7 @@ footer {
                 height: rem(24px);
                 border-bottom: none;
                 position: relative;
-                &:hover {
+                @include hover {
                     color: var(--white);
                 }
                 &::before {
@@ -103,8 +102,10 @@ footer {
                     transform: scale(0);
                     transition: all .2s ease;
                 }
-                &:hover::before {
-                    transform: scale(1);
+                @include hover {
+                    &::before {
+                        transform: scale(1);
+                    }
                 }
                 svg {
                     width: 100%;
@@ -127,8 +128,10 @@ footer {
         p {
             margin: 0;
             padding: .6rem 0;
-            a:hover {
-                color: var(--orange);
+            a {
+                @include hover {
+                    color: var(--orange);
+                }
             }
             svg {
                 width: 10px;

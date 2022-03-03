@@ -214,9 +214,7 @@ h2 {
             color: var(--dark-blue);
             text-decoration: none;
             transition: .4s ease;
-            &:hover,
-            &:active,
-            &:focus {
+            @include hover {
                 color: var(--orange);
                 text-decoration: underline;
             }
@@ -256,7 +254,7 @@ h2 {
             transition: all .2s ease;
             border: 6px solid transparent;
             margin-bottom: 2rem;
-            &:hover {
+            @include hover {
                 color: var(--orange);
                 border: 6px solid var(--orange);
                 svg path {
@@ -270,7 +268,7 @@ h2 {
                 color: var(--dark-blue);
                 text-decoration: none;
                 transition: all .2s ease;
-                &:hover {
+                @include hover {
                     color: var(--orange);
                 }
             }
