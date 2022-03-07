@@ -224,6 +224,9 @@ h2 {
 
 /* Blog posts */
 .single-post {
+    .container {
+        padding-bottom: 2rem;
+    }
     figure {
         max-width: 100%;
         margin: auto;
