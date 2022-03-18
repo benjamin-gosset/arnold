@@ -472,3 +472,17 @@ class Walker_Reformated_Category extends Walker_Category
 		return $output;
 	}
 }
+
+/**
+ * Exclude a post type from XML sitemaps.
+ *
+ * @param boolean $excluded  Whether the post type is excluded by default.
+ * @param string  $post_type The post type to exclude.
+ *
+ * @return bool Whether or not a given post type should be excluded.
+ */
+function bgo_sitemap_exclude_post_type( $excluded, $post_type ) {
+    return $post_type === 'realisation';
+}
+
+add_filter( 'wpseo_sitemap_exclude_post_type', 'bgo_sitemap_exclude_post_type', 10, 2 );
